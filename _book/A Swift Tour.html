@@ -313,7 +313,84 @@ print(m)
 </code></pre><p>&#x7528;<code>..&lt;</code>&#x6765;&#x8868;&#x793A;&#x6570;&#x5B57;&#x8303;&#x56F4;&#xFF0C;&#x533A;&#x95F4;&#x4E3A;&#x5DE6;&#x95ED;&#x53F3;&#x5F00;&#xFF0C;&#x7528;<code>...</code>&#x6765;&#x8868;&#x793A;&#x5DE6;&#x95ED;&#x53F3;&#x95ED;&#x7684;&#x533A;&#x95F4;&#x3002;</p>
 <h3 id="&#x51FD;&#x6570;&#x548C;&#x95ED;&#x5305;">&#x51FD;&#x6570;&#x548C;&#x95ED;&#x5305;</h3>
 <p>&#x7528;<code>func</code>&#x6765;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x7528;&#x51FD;&#x6570;&#x540D;&#x52A0;&#x5E26;&#x6709;&#x53C2;&#x6570;&#x7684;&#x5706;&#x62EC;&#x53F7;&#x6765;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x7528;<code>-&gt;</code>&#x6765;&#x5206;&#x5272;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x548C;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x3002;</p>
+<pre><code>func greet(person: String, day: String) -&gt; String {
+    return &quot;Hello \(person), today is \(day).&quot;
+}
+greet(person: &quot;Bob&quot;, day: &quot;Tuesday&quot;)&quot;
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x79FB;&#x9664;&#x53C2;&#x6570;`day`, &#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F7F;&#x5F97;greet&#x4E2D;&#x5305;&#x542B;&#x4ECA;&#x5929;&#x7684;&#x5348;&#x9910;&#x3002;
+</code></pre><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x51FD;&#x6570;&#x4E2D;&#x4F1A;&#x4F7F;&#x7528;&#x5F62;&#x53C2;&#x7684;&#x540D;&#x79F0;&#x6765;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x53C2;&#x6570;&#x524D;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#x6216;&#x8005;&#x7528;<code>_</code>&#x6765;&#x5FFD;&#x7565;&#x53C2;&#x6570;&#x6807;&#x7B7E;&#x3002;</p>
+<pre><code>&quot;func greet(_ person: String, on day: String) -&gt; String {
+    return &quot;Hello \(person), today is \(day).&quot;
+}
+greet(&quot;John&quot;, on: &quot;Wednesday&quot;)&quot;
+</code></pre><p>&#x4F7F;&#x7528;&#x5143;&#x7EC4;&#x53EF;&#x4EE5;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x6DF7;&#x5408;&#x503C;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5143;&#x7EC4;&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x503C;&#x3002;&#x5143;&#x7EC4;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x7528;&#x540D;&#x79F0;&#x6216;&#x8005;&#x6570;&#x5B57;&#x8BBF;&#x95EE;&#x5230;&#x3002;</p>
+<pre><code>func calculateStatistics(scores: [Int]) -&gt; (min: Int, max: Int, sum: Int) {
+    var min = scores[0]
+    var max = scores[0]
+    var sum = 0
 
+    for score in scores {
+        if score &gt; max {
+            max = score
+        } else if score &lt; min {
+            min = score
+        }
+        sum += score
+    }
+
+    return (min, max, sum)
+}
+let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
+print(statistics.sum)
+// Prints &quot;120&quot;
+print(statistics.2)
+// Prints &quot;120&quot;
+</code></pre><p>&#x51FD;&#x6570;&#x662F;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x7684;&#x3002;&#x5D4C;&#x5957;&#x7684;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5728;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5D4C;&#x5957;&#x51FD;&#x6570;&#x6765;&#x7EC4;&#x7EC7;&#x5F88;&#x957F;&#x6216;&#x8005;&#x5F88;&#x590D;&#x6742;&#x7684;&#x51FD;&#x6570;&#x5185;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<pre><code>func returnFifteen() -&gt; Int {
+    var y = 10
+    func add() {
+        y += 5
+    }
+    add()
+    return y
+}
+returnFifteen()&quot;
+</code></pre><p>&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x5176;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<pre><code>func makeIncrementer() -&gt; ((Int) -&gt; Int) {
+    func addOne(number: Int) -&gt; Int {
+        return 1 + number
+    }
+    return addOne
+}
+var increment = makeIncrementer()
+increment(7)
+</code></pre><p>&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x628A;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x4E4B;&#x4E00;&#x3002;</p>
+<pre><code>func hasAnyMatches(list: [Int], condition: (Int) -&gt; Bool) -&gt; Bool {
+    for item in list {
+        if condition(item) {
+            return true
+        }
+    }
+    return false
+}
+func lessThanTen(number: Int) -&gt; Bool {
+    return number &lt; 10
+}
+var numbers = [20, 19, 7, 12]
+hasAnyMatches(list: numbers, condition: lessThanTen)&quot;
+</code></pre><p>&#x51FD;&#x6570;&#x662F;&#x95ED;&#x5305;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x4F8B;&#x3002;&#x4EC0;&#x4E48;&#x662F;&#x95ED;&#x5305;&#xFF1F;&#x95ED;&#x5305;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5EF6;&#x540E;&#x8C03;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x3002;&#x95ED;&#x5305;&#x5185;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x95ED;&#x5305;&#x521B;&#x5EFA;&#x65F6;&#x6240;&#x5C5E;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x662F;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x6267;&#x884C;&#x7684;&#x3002;&#x524D;&#x9762;&#x7684;&#x5D4C;&#x5957;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x3002;&#x540C;&#x65F6;&#x4F60;&#x53EF;&#x4EE5;&#x7528;<code>({})</code>&#x5305;&#x88F9;&#x7740;&#x4EE3;&#x7801;&#x5199;&#x51FA;&#x4E00;&#x4E2A;&#x4E0D;&#x5E26;&#x540D;&#x79F0;&#x7684;&#x95ED;&#x5305;&#x3002;&#x4F7F;&#x7528;<code>in</code>&#x6765;&#x5206;&#x5272;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x4F53;&#x3002;</p>
+<pre><code>numbers.map({ (number: Int) -&gt; Int in
+    let result = 3 * number
+    return result
+})&quot;
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x91CD;&#x5199;&#x95ED;&#x5305;&#x6765;&#x8BA9;&#x6240;&#x6709;&#x5947;&#x6570;&#x6570;&#x5B57;&#x90FD;&#x8FD4;&#x56DE;0&#x3002;
+</code></pre><p>&#x4F60;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x79CD;&#x9009;&#x62E9;&#x6765;&#x5B9E;&#x73B0;&#x66F4;&#x7B80;&#x6D01;&#x7684;&#x95ED;&#x5305;&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x95ED;&#x5305;&#x7684;&#x7C7B;&#x578B;&#x5DF2;&#x7ECF;&#x660E;&#x786E;&#xFF0C;&#x4F8B;&#x5982;&#x662F;&#x4E00;&#x4E2A;<code>delegate</code>&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x6216;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x6216;&#x4E8C;&#x8005;&#x90FD;&#x5FFD;&#x7565;&#x3002;&#x5355;&#x8BED;&#x53E5;&#x95ED;&#x5305;&#x9690;&#x5F0F;&#x8FD4;&#x56DE;&#x5176;&#x552F;&#x4E00;&#x8BED;&#x53E5;&#x7684;&#x503C;&#x3002;</p>
+<pre><code>let mappedNumbers = numbers.map({ number in 3 * number })
+print(mappedNumbers)
+// Prints &quot;[60, 57, 21, 36]&quot;
+</code></pre>
                                 
                                 </section>
                             
@@ -352,7 +429,7 @@ print(m)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"一次Swift旅行","level":"1.3","depth":1,"previous":{"title":"关于","level":"1.2","depth":1,"path":"About.md","ref":"About.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"A Swift Tour.md","mtime":"2020-08-23T08:02:39.496Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-23T10:45:59.193Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"一次Swift旅行","level":"1.3","depth":1,"previous":{"title":"关于","level":"1.2","depth":1,"path":"About.md","ref":"About.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"A Swift Tour.md","mtime":"2020-08-24T15:14:12.704Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-23T10:45:59.193Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

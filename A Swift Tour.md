@@ -220,3 +220,112 @@ print(m)
 ### 函数和闭包
 
 用`func`来声明一个函数。用函数名加带有参数的圆括号来调用这个函数。用`->`来分割函数参数和函数返回值类型。
+```
+func greet(person: String, day: String) -> String {
+    return "Hello \(person), today is \(day)."
+}
+greet(person: "Bob", day: "Tuesday")"
+```
+
+```
+尝试练习
+移除参数`day`, 增加一个参数使得greet中包含今天的午餐。
+```
+
+默认情况下，函数中会使用形参的名称来作为参数的标签，你也可以在参数前自定义一个别名或者用`_`来忽略参数标签。
+```
+"func greet(_ person: String, on day: String) -> String {
+    return "Hello \(person), today is \(day)."
+}
+greet("John", on: "Wednesday")"
+```
+
+使用元组可以构造一个混合值，例如，一个函数可以利用元组返回多个值。元组的每个元素可以用名称或者数字访问到。
+
+```
+func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
+    var min = scores[0]
+    var max = scores[0]
+    var sum = 0
+
+    for score in scores {
+        if score > max {
+            max = score
+        } else if score < min {
+            min = score
+        }
+        sum += score
+    }
+
+    return (min, max, sum)
+}
+let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
+print(statistics.sum)
+// Prints "120"
+print(statistics.2)
+// Prints "120"
+```
+
+函数是可以嵌套的。嵌套的函数可以访问在外部函数声明的变量。你可以使用嵌套函数来组织很长或者很复杂的函数内的代码。
+```
+func returnFifteen() -> Int {
+    var y = 10
+    func add() {
+        y += 5
+    }
+    add()
+    return y
+}
+returnFifteen()"
+```
+
+函数也是一种类型。这意味着函数也可以返回另一个函数作为其返回值。
+```
+func makeIncrementer() -> ((Int) -> Int) {
+    func addOne(number: Int) -> Int {
+        return 1 + number
+    }
+    return addOne
+}
+var increment = makeIncrementer()
+increment(7)
+```
+
+一个函数可以把另一个函数作为它的参数之一。
+```
+func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
+    for item in list {
+        if condition(item) {
+            return true
+        }
+    }
+    return false
+}
+func lessThanTen(number: Int) -> Bool {
+    return number < 10
+}
+var numbers = [20, 19, 7, 12]
+hasAnyMatches(list: numbers, condition: lessThanTen)"
+```
+
+函数是闭包的一种特例。什么是闭包？闭包是一个可以延后调用的代码块。闭包内的代码可以访问闭包创建时所属作用域内的变量和函数，即使它是在另一个不同的作用域内执行的。前面的嵌套函数就是一个例子。同时你可以用`({})`包裹着代码写出一个不带名称的闭包。使用`in`来分割参数和返回体。
+
+```
+numbers.map({ (number: Int) -> Int in
+    let result = 3 * number
+    return result
+})"
+```
+
+```
+尝试练习
+重写闭包来让所有奇数数字都返回0。
+```
+
+你可以有多种选择来实现更简洁的闭包。当一个闭包的类型已经明确，例如是一个`delegate`的回调，你可以忽略参数的类型或返回值类型或二者都忽略。单语句闭包隐式返回其唯一语句的值。
+```
+let mappedNumbers = numbers.map({ number in 3 * number })
+print(mappedNumbers)
+// Prints "[60, 57, 21, 36]"
+```
+
