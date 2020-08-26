@@ -203,7 +203,7 @@ let widthLabel = label + String(width)
 <pre><code>let apples = 3
 let oranges = 5
 let appleSummary = &quot;I have \(apples) apples.&quot;
-let fruitSummary = &quot;I have \(apples + oranges) pieces of fruit.
+let fruitSummary = &quot;I have \(apples + oranges) pieces of fruit.&quot;
 </code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
 &#x7528;`\()`&#x5728;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x63D2;&#x5165;&#x6D6E;&#x70B9;&#x6570;&#x7684;&#x7B97;&#x5F0F;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x4E00;&#x4E2A;&#x6253;&#x62DB;&#x547C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x63D2;&#x5165;&#x67D0;&#x4EBA;&#x7684;&#x540D;&#x5B57;&#x3002;
 </code></pre><p>&#x7528;&#x4E09;&#x53CC;&#x5F15;&#x53F7;<code>&quot;&quot;&quot;</code>&#x6765;&#x751F;&#x6210;&#x591A;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5220;&#x9664;&#x6BCF;&#x884C;&#x5F15;&#x53F7;&#x5F00;&#x5934;&#x7684;&#x7F29;&#x8FDB;&#xFF0C;&#x53EA;&#x8981;&#x5B83;&#x4E0E;&#x53F3;&#x5F15;&#x53F7;&#x7684;&#x7F29;&#x8FDB;&#x76F8;&#x5339;&#x914D;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
@@ -255,12 +255,12 @@ if let name = optionalName {
     greeting = &quot;Hello, \(name)&quot;
 }
 </code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
-&#x628A;`optionalName`&#x53D8;&#x4E3A;`nil`&#xFF0C;`greeting`&#x4F1A;&#x662F;&#x4EC0;&#x4E48;&#x7ED3;&#x679C;?&#x628A;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x52A0;&#x5728;`else`&#x6761;&#x4EF6;&#x4E2D;&#x8BD5;&#x4E00;&#x4E0B;&#x3002;
+&#x628A;optionalName&#x53D8;&#x4E3A;nil&#xFF0C;greeting&#x4F1A;&#x662F;&#x4EC0;&#x4E48;&#x7ED3;&#x679C;?&#x628A;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x52A0;&#x5728;else&#x6761;&#x4EF6;&#x4E2D;&#x8BD5;&#x4E00;&#x4E0B;&#x3002;
 </code></pre><p>&#x5982;&#x679C;&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x503C;&#x662F;<code>nil</code>, &#x90A3;&#x4E48;&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;&#x5C31;&#x662F;<code>false</code>, &#x81EA;&#x7136;if&#x4EE3;&#x7801;&#x5757;&#x4E5F;&#x4E0D;&#x4F1A;&#x6267;&#x884C;&#x3002;&#x9664;&#x6B64;&#x4EE5;&#x5916;, &#x672A;&#x89E3;&#x5305;&#x7684;&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x5728;<code>let</code>&#x540E;&#x8D4B;&#x7ED9;&#x4E86;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#xFF0C;&#x90A3;&#x8FD9;&#x4E2A;&#x5E38;&#x91CF;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x6761;&#x4EF6;&#x4E3A;&#x771F;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
 <p>&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x5904;&#x7406;&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x7528;<code>??</code>&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x503C;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x5C31;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x8FD9;&#x4E2A;&#x503C;&#x66FF;&#x6362;&#x3002;</p>
 <pre><code>let nickname: String? = nil
 let fullName: String = &quot;John Appleseed&quot;
-let informalGreeting = &quot;Hi \(nickname ?? fullName)
+let informalGreeting = &quot;Hi \(nickname ?? fullName)&quot;
 </code></pre><p><code>Switch</code>&#x652F;&#x6301;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x548C;&#x591A;&#x79CD;&#x6BD4;&#x8F83;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4E0D;&#x4EC5;&#x9650;&#x4E8E;&#x6574;&#x6570;&#x548C;&#x76F8;&#x7B49;&#x6027;&#x7684;&#x6D4B;&#x8BD5;&#x3002;</p>
 <pre><code>let vegetable = &quot;red pepper&quot;
 switch vegetable {
@@ -275,7 +275,7 @@ default:
 }
 // Prints &quot;Is it a spicy red pepper?&quot;
 </code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
-&#x5C1D;&#x8BD5;&#x628A;`default`&#x79FB;&#x9664;&#x6389;&#xFF0C;&#x4F1A;&#x629B;&#x51FA;&#x4EC0;&#x4E48;&#x9519;&#x8BEF;?
+&#x5C1D;&#x8BD5;&#x628A;default&#x79FB;&#x9664;&#x6389;&#xFF0C;&#x4F1A;&#x629B;&#x51FA;&#x4EC0;&#x4E48;&#x9519;&#x8BEF;?
 </code></pre><p>&#x8BF7;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x662F;&#x5982;&#x4F55;&#x7528;<code>let</code>&#x6765;&#x7ED9;&#x5E38;&#x91CF;&#x8D4B;&#x503C;&#x5E76;&#x5C06;&#x503C;&#x7528;&#x4E8E;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x8FDB;&#x884C;case&#x5339;&#x914D;&#x3002;</p>
 <p>&#x6267;&#x884C;&#x5B8C;switch&#x4E2D;&#x7684;&#x5339;&#x914D;&#x5230;&#x7684;case&#x540E;&#xFF0C;&#x7A0B;&#x5E8F;&#x5373;&#x9000;&#x51FA;switch&#xFF0C;&#x4E0D;&#x4F1A;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x540E;&#x7EED;case&#xFF0C;&#x56E0;&#x6B64;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x5728;&#x6BCF;&#x4E2A;case&#x540E;&#x589E;&#x52A0;<code>break</code>&#x3002;</p>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>for-in</code>&#x6765;&#x8FDB;&#x884C;&#x5B57;&#x5178;&#x952E;&#x503C;&#x7684;&#x904D;&#x5386;&#xFF0C;&#x7531;&#x4E8E;&#x5B57;&#x5178;&#x662F;&#x65E0;&#x5E8F;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x6240;&#x4EE5;&#x952E;&#x503C;&#x4F1A;&#x4EE5;&#x81EA;&#x7531;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x904D;&#x5386;&#x3002;</p>
@@ -316,14 +316,14 @@ print(m)
 <pre><code>func greet(person: String, day: String) -&gt; String {
     return &quot;Hello \(person), today is \(day).&quot;
 }
-greet(person: &quot;Bob&quot;, day: &quot;Tuesday&quot;)&quot;
+greet(person: &quot;Bob&quot;, day: &quot;Tuesday&quot;)
 </code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
-&#x79FB;&#x9664;&#x53C2;&#x6570;`day`, &#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F7F;&#x5F97;greet&#x4E2D;&#x5305;&#x542B;&#x4ECA;&#x5929;&#x7684;&#x5348;&#x9910;&#x3002;
+&#x79FB;&#x9664;&#x53C2;&#x6570;day, &#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4F7F;&#x5F97;greet&#x4E2D;&#x5305;&#x542B;&#x4ECA;&#x5929;&#x7684;&#x5348;&#x9910;&#x3002;
 </code></pre><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x51FD;&#x6570;&#x4E2D;&#x4F1A;&#x4F7F;&#x7528;&#x5F62;&#x53C2;&#x7684;&#x540D;&#x79F0;&#x6765;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x53C2;&#x6570;&#x524D;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#x6216;&#x8005;&#x7528;<code>_</code>&#x6765;&#x5FFD;&#x7565;&#x53C2;&#x6570;&#x6807;&#x7B7E;&#x3002;</p>
-<pre><code>&quot;func greet(_ person: String, on day: String) -&gt; String {
+<pre><code>func greet(_ person: String, on day: String) -&gt; String {
     return &quot;Hello \(person), today is \(day).&quot;
 }
-greet(&quot;John&quot;, on: &quot;Wednesday&quot;)&quot;
+greet(&quot;John&quot;, on: &quot;Wednesday&quot;)
 </code></pre><p>&#x4F7F;&#x7528;&#x5143;&#x7EC4;&#x53EF;&#x4EE5;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x6DF7;&#x5408;&#x503C;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5143;&#x7EC4;&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x503C;&#x3002;&#x5143;&#x7EC4;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x7528;&#x540D;&#x79F0;&#x6216;&#x8005;&#x6570;&#x5B57;&#x8BBF;&#x95EE;&#x5230;&#x3002;</p>
 <pre><code>func calculateStatistics(scores: [Int]) -&gt; (min: Int, max: Int, sum: Int) {
     var min = scores[0]
@@ -355,7 +355,7 @@ print(statistics.2)
     add()
     return y
 }
-returnFifteen()&quot;
+returnFifteen()
 </code></pre><p>&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x51FD;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x5176;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
 <pre><code>func makeIncrementer() -&gt; ((Int) -&gt; Int) {
     func addOne(number: Int) -&gt; Int {
@@ -378,19 +378,368 @@ func lessThanTen(number: Int) -&gt; Bool {
     return number &lt; 10
 }
 var numbers = [20, 19, 7, 12]
-hasAnyMatches(list: numbers, condition: lessThanTen)&quot;
-</code></pre><p>&#x51FD;&#x6570;&#x662F;&#x95ED;&#x5305;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x4F8B;&#x3002;&#x4EC0;&#x4E48;&#x662F;&#x95ED;&#x5305;&#xFF1F;&#x95ED;&#x5305;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5EF6;&#x540E;&#x8C03;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x3002;&#x95ED;&#x5305;&#x5185;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x95ED;&#x5305;&#x521B;&#x5EFA;&#x65F6;&#x6240;&#x5C5E;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x662F;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x6267;&#x884C;&#x7684;&#x3002;&#x524D;&#x9762;&#x7684;&#x5D4C;&#x5957;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x3002;&#x540C;&#x65F6;&#x4F60;&#x53EF;&#x4EE5;&#x7528;<code>({})</code>&#x5305;&#x88F9;&#x7740;&#x4EE3;&#x7801;&#x5199;&#x51FA;&#x4E00;&#x4E2A;&#x4E0D;&#x5E26;&#x540D;&#x79F0;&#x7684;&#x95ED;&#x5305;&#x3002;&#x4F7F;&#x7528;<code>in</code>&#x6765;&#x5206;&#x5272;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x4F53;&#x3002;</p>
+hasAnyMatches(list: numbers, condition: lessThanTen)
+</code></pre><p>&#x51FD;&#x6570;&#x662F;&#x95ED;&#x5305;&#x7684;&#x4E00;&#x79CD;&#x7279;&#x4F8B;&#x3002;&#x4EC0;&#x4E48;&#x662F;&#x95ED;&#x5305;&#xFF1F;&#x95ED;&#x5305;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x5EF6;&#x540E;&#x8C03;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x5757;&#x3002;&#x95ED;&#x5305;&#x5185;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x95ED;&#x5305;&#x521B;&#x5EFA;&#x65F6;&#x6240;&#x5C5E;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x7684;&#x53D8;&#x91CF;&#x548C;&#x51FD;&#x6570;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x662F;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x6267;&#x884C;&#x7684;&#x3002;&#x524D;&#x9762;&#x7684;&#x5D4C;&#x5957;&#x51FD;&#x6570;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x3002;&#x540C;&#x65F6;&#x4F60;&#x53EF;&#x4EE5;&#x7528;<code>({})</code>&#x5305;&#x88F9;&#x7740;&#x4EE3;&#x7801;&#x5199;&#x51FA;&#x4E00;&#x4E2A;&#x533F;&#x540D;&#x95ED;&#x5305;&#x3002;&#x4F7F;&#x7528;<code>in</code>&#x6765;&#x5206;&#x5272;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x4F53;&#x3002;</p>
 <pre><code>numbers.map({ (number: Int) -&gt; Int in
     let result = 3 * number
     return result
-})&quot;
+})
 </code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
 &#x91CD;&#x5199;&#x95ED;&#x5305;&#x6765;&#x8BA9;&#x6240;&#x6709;&#x5947;&#x6570;&#x6570;&#x5B57;&#x90FD;&#x8FD4;&#x56DE;0&#x3002;
 </code></pre><p>&#x4F60;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x79CD;&#x9009;&#x62E9;&#x6765;&#x5B9E;&#x73B0;&#x66F4;&#x7B80;&#x6D01;&#x7684;&#x95ED;&#x5305;&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x95ED;&#x5305;&#x7684;&#x7C7B;&#x578B;&#x5DF2;&#x7ECF;&#x660E;&#x786E;&#xFF0C;&#x4F8B;&#x5982;&#x662F;&#x4E00;&#x4E2A;<code>delegate</code>&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x6216;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x6216;&#x4E8C;&#x8005;&#x90FD;&#x5FFD;&#x7565;&#x3002;&#x5355;&#x8BED;&#x53E5;&#x95ED;&#x5305;&#x9690;&#x5F0F;&#x8FD4;&#x56DE;&#x5176;&#x552F;&#x4E00;&#x8BED;&#x53E5;&#x7684;&#x503C;&#x3002;</p>
 <pre><code>let mappedNumbers = numbers.map({ number in 3 * number })
 print(mappedNumbers)
 // Prints &quot;[60, 57, 21, 36]&quot;
-</code></pre>
+</code></pre><p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x800C;&#x4E0D;&#x662F;&#x540D;&#x79F0;&#x6765;&#x6307;&#x4EE3;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5C24;&#x5176;&#x9002;&#x7528;&#x4E8E;&#x5F88;&#x77ED;&#x7684;&#x95ED;&#x5305;&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x95ED;&#x5305;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x95ED;&#x5305;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5C3E;&#x968F;&#x51FD;&#x6570;&#x62EC;&#x53F7;&#x3002;&#x5F53;&#x95ED;&#x5305;&#x662F;&#x51FD;&#x6570;&#x7684;&#x552F;&#x4E00;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5FFD;&#x7565;&#x6389;&#x51FD;&#x6570;&#x62EC;&#x53F7;(&#x5982;&#x4E0B;&#x4F8B;&#x5B50;)&#x3002;</p>
+<pre><code>let sortedNumbers = numbers.sorted { $0 &gt; $1 }
+print(sortedNumbers)
+// Prints &quot;[20, 19, 12, 7]&quot;
+</code></pre><h3 id="&#x5BF9;&#x8C61;&#x548C;&#x7C7B;">&#x5BF9;&#x8C61;&#x548C;&#x7C7B;</h3>
+<p><code>class</code>&#x540E;&#x52A0;&#x4E0A;&#x7C7B;&#x540D;&#x5C31;&#x53EF;&#x4EE5;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x7C7B;&#x3002;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x5C5E;&#x6027;&#x65E0;&#x8BBA;&#x662F;&#x5E38;&#x91CF;&#x8FD8;&#x662F;&#x53D8;&#x91CF;&#x5728;&#x7C7B;&#x4E2D;&#x7684;&#x58F0;&#x660E;&#x65B9;&#x5F0F;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x540C;&#x6837;&#xFF0C;&#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x51FD;&#x6570;&#x7684;&#x58F0;&#x660E;&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<pre><code>class Shape {
+    var numberOfSides = 0
+    func simpleDescription() -&gt; String {
+        return &quot;A shape with \(numberOfSides) sides.&quot;
+    }
+}
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x7528;let&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#x5C5E;&#x6027;&#xFF0C;&#x540C;&#x65F6;&#x589E;&#x52A0;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x3002;
+</code></pre><p>&#x5728;&#x7C7B;&#x540D;&#x540E;&#x52A0;&#x4E0A;&#x5706;&#x62EC;&#x53F7;&#x5C31;&#x53EF;&#x4EE5;&#x521B;&#x9020;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;&#x7528;<code>.</code>&#x6765;&#x8BBF;&#x95EE;&#x7C7B;&#x5B9E;&#x4F8B;&#x7684;&#x6210;&#x5458;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>var shape = Shape()
+shape.numberOfSides = 7
+var shapeDescription = shape.simpleDescription()
+</code></pre><p>&#x8FD9;&#x4E2A;Shape&#x7C7B;&#x7684;&#x5199;&#x6CD5;&#x7F3A;&#x5C11;&#x4E86;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x4E1C;&#x897F;&#xFF1A;&#x5F53;&#x5B9E;&#x4F8B;&#x521B;&#x5EFA;&#x65F6;&#x6267;&#x884C;&#x7684;&#x6784;&#x9020;&#x5668;&#x3002;&#x4F7F;&#x7528;<code>init</code>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x5668;&#x3002;</p>
+<pre><code>class NamedShape {
+    var numberOfSides: Int = 0
+    var name: String
+
+    init(name: String) {
+        self.name = name
+    }
+
+    func simpleDescription() -&gt; String {
+        return &quot;A shape with \(numberOfSides) sides.&quot;
+    }
+}
+</code></pre><p>&#x8BF7;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x662F;&#x7528;<code>self</code>&#x6765;&#x5C06;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x7684;name&#x53C2;&#x6570;&#x548C;&#x7C7B;&#x7684;&#x6210;&#x5458;&#x5C5E;&#x6027;name&#x6765;&#x533A;&#x5206;&#x5F00;&#x7684;&#x3002;&#x5F53;&#x521B;&#x5EFA;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x65F6;&#xFF0C;&#x6784;&#x9020;&#x5668;&#x7684;&#x53C2;&#x6570;&#x5C31;&#x548C;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x4E00;&#x6837;&#x4F20;&#x5165;&#x4E86;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;&#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x90FD;&#x9700;&#x8981;&#x8D4B;&#x503C;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x5728;&#x53D8;&#x91CF;&#x58F0;&#x660E;(&#x5982;numberOfSides)&#x4E2D;&#x8FD8;&#x662F;&#x6784;&#x9020;&#x51FD;&#x6570;(&#x5982;name)&#x4E2D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x5728;&#x5BF9;&#x8C61;&#x88AB;&#x56DE;&#x6536;&#x4E4B;&#x524D;&#x505A;&#x4E00;&#x4E9B;&#x6E05;&#x7406;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>deinit</code>&#x6765;&#x521B;&#x9020;&#x4E00;&#x4E2A;&#x6790;&#x6784;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x7C7B;&#x540D;&#x79F0;&#x540E;&#x52A0;&#x4E0A;&#x7236;&#x7C7B;&#x540D;&#x79F0;&#xFF0C;&#x4E8C;&#x8005;&#x4E2D;&#x4EE5;<code>:</code>&#x5206;&#x9694;&#xFF0C;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x5B50;&#x7C7B;&#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x3002;&#x7C7B;&#x6CA1;&#x6709;&#x5F3A;&#x5236;&#x8981;&#x6C42;&#x5FC5;&#x987B;&#x7EE7;&#x627F;&#x81EA;&#x67D0;&#x4E2A;&#x6807;&#x51C6;&#x7684;&#x6839;&#x7C7B;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x9700;&#x6C42;&#x6765;&#x7EE7;&#x627F;&#x6216;&#x8005;&#x4E0D;&#x7EE7;&#x627F;&#x3002;</p>
+<p>&#x5B50;&#x7C7B;&#x5185;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x52A0;<code>override</code>&#x524D;&#x7F00;&#x6765;&#x4EE3;&#x8868;&#x8986;&#x5199;&#x7236;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x52A0;&#x5E76;&#x4E14;&#x8986;&#x5199;&#x4E86;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4F1A;&#x68C0;&#x6D4B;&#x5E76;&#x62A5;&#x9519;&#x3002;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x52A0;&#x4E86;<code>override</code>&#x5374;&#x4E0D;&#x662F;&#x8986;&#x5199;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4E5F;&#x4F1A;&#x68C0;&#x6D4B;&#x51FA;&#x6765;&#x5E76;&#x62A5;&#x9519;&#x3002;</p>
+<pre><code>class Square: NamedShape {
+    var sideLength: Double
+
+    init(sideLength: Double, name: String) {
+        self.sideLength = sideLength
+        super.init(name: name)
+        numberOfSides = 4
+    }
+
+    func area() -&gt; Double {
+        return sideLength * sideLength
+    }
+
+    override func simpleDescription() -&gt; String {
+        return &quot;A square with sides of length \(sideLength).&quot;
+    }
+}
+let test = Square(sideLength: 5.2, name: &quot;my test square&quot;)
+test.area()
+test.simpleDescription()
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x5199;&#x51FA;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x7EE7;&#x627F;&#x81EA;NamedShape&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x540D;&#x5B57;&#x53EB;Circle&#x3002;&#x5B83;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x6709;&#x4E24;&#x4E2A;&#xFF1A;name&#x548C;radius&#x3002;&#x540C;&#x65F6;&#x5728;&#x6B64;&#x7C7B;&#x4E2D;&#x5B9E;&#x73B0;area()&#x548C;simpleDescription()&#x65B9;&#x6CD5;&#x3002;
+</code></pre><p>&#x9664;&#x4E86;&#x5B58;&#x50A8;&#x7684;&#x7B80;&#x5355;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5C5E;&#x6027;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;getter&#x548C;setter&#x3002;</p>
+<pre><code>class EquilateralTriangle: NamedShape {
+    var sideLength: Double = 0.0
+
+    init(sideLength: Double, name: String) {
+        self.sideLength = sideLength
+        super.init(name: name)
+        numberOfSides = 3
+    }
+
+    var perimeter: Double {
+        get {
+            return 3.0 * sideLength
+        }
+        set {
+            sideLength = newValue / 3.0
+        }
+    }
+
+    override func simpleDescription() -&gt; String {
+        return &quot;An equilateral triangle with sides of length \(sideLength).&quot;
+    }
+}
+var triangle = EquilateralTriangle(sideLength: 3.1, name: &quot;a triangle&quot;)
+print(triangle.perimeter)
+// Prints &quot;9.3&quot;
+triangle.perimeter = 9.9
+print(triangle.sideLength)
+// Prints &quot;3.3000000000000003&quot;
+</code></pre><p>&#x5728;&#x4E0A;&#x9762;<code>perimeter</code>&#x5C5E;&#x6027;&#x7684;setter&#x4E2D;&#xFF0C;&#x65B0;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x6709;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x540D;&#x79F0;<code>newValue</code>&#xFF0C;&#x5F53;&#x7136;&#xFF0C;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;<code>set</code>&#x540E;&#x52A0;&#x4E0A;&#x5706;&#x62EC;&#x53F7;&#xFF0C;&#x5E76;&#x5728;&#x5176;&#x4E2D;&#x663E;&#x793A;&#x7ED9;&#x65B0;&#x503C;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x8BF7;&#x6CE8;&#x610F;<code>EquilateralTriangle</code>&#x7C7B;&#x7684;&#x6784;&#x9020;&#x5668;&#x4E2D;&#x6267;&#x884C;&#x4E86;&#x4E09;&#x6B65;&#xFF1A;</p>
+<ol>
+<li>&#x7ED9;&#x81EA;&#x5DF1;&#x7C7B;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;(sideLength)&#x8D4B;&#x503C;&#x3002;</li>
+<li>&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;</li>
+<li>&#x6539;&#x53D8;&#x7236;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;(numberOfSides)&#x7684;&#x503C;&#x3002;&#x4EFB;&#x4F55;&#x9700;&#x8981;&#x7528;&#x5230;&#x65B9;&#x6CD5;&#x3001;getter&#x548C;setter&#x7684;&#x6784;&#x9020;&#x5DE5;&#x4F5C;&#x90FD;&#x53EF;&#x4EE5;&#x653E;&#x5728;&#x8FD9;&#x91CC;&#x8FDB;&#x884C;&#x3002;</li>
+</ol>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x5728;&#x5C5E;&#x6027;&#x503C;&#x6539;&#x53D8;&#x524D;&#x540E;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x4EE3;&#x7801;&#xFF0C;&#x90A3;&#x4E48;&#x4F7F;&#x7528;<code>willSet</code>&#x548C;<code>didSet</code>&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x3002;&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x4F1A;&#x5728;&#x6784;&#x9020;&#x5668;&#x4E4B;&#x5916;&#x7684;&#x5F53;&#x5C5E;&#x6027;&#x503C;&#x6539;&#x53D8;&#x7684;&#x4EFB;&#x610F;&#x65F6;&#x523B;&#x6267;&#x884C;&#x3002;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x7C7B;&#x4E2D;&#xFF1A;&#x4E09;&#x89D2;&#x5F62;&#x7684;&#x8FB9;&#x957F;&#x548C;&#x56DB;&#x8FB9;&#x5F62;&#x7684;&#x8FB9;&#x957F;&#x4F1A;&#x59CB;&#x7EC8;&#x4FDD;&#x6301;&#x76F8;&#x7B49;&#x3002;</p>
+<pre><code>class TriangleAndSquare {
+    var triangle: EquilateralTriangle {
+        willSet {
+            square.sideLength = newValue.sideLength
+        }
+    }
+    var square: Square {
+        willSet {
+            triangle.sideLength = newValue.sideLength
+        }
+    }
+    init(size: Double, name: String) {
+        square = Square(sideLength: size, name: name)
+        triangle = EquilateralTriangle(sideLength: size, name: name)
+    }
+}
+var triangleAndSquare = TriangleAndSquare(size: 10, name: &quot;another test shape&quot;)
+print(triangleAndSquare.square.sideLength)
+// Prints &quot;10.0&quot;
+print(triangleAndSquare.triangle.sideLength)
+// Prints &quot;10.0&quot;
+triangleAndSquare.square = Square(sideLength: 50, name: &quot;larger square&quot;)
+print(triangleAndSquare.triangle.sideLength)
+// Prints &quot;50.0&quot;
+</code></pre><p>&#x5F53;&#x7528;&#x5230;&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x65B9;&#x6CD5;&#x3001;&#x5C5E;&#x6027;&#x548C;&#x53D6;&#x4E0B;&#x6807;&#x7B49;&#x64CD;&#x4F5C;&#x4E4B;&#x524D;&#x52A0;<code>?</code>&#x3002;&#x5982;&#x679C;<code>?</code>&#x524D;&#x9762;&#x7684;&#x53D8;&#x91CF;&#x503C;&#x662F;<code>nil</code>, <code>?</code>&#x540E;&#x9762;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x5E76;&#x4E14;&#x6574;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x662F;<code>nil</code>&#x3002;&#x5426;&#x5219;&#xFF0C;&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x5C31;&#x662F;&#x672A;&#x89E3;&#x5305;&#x7684;&#xFF0C;&#x90A3;&#x4E48;<code>?</code>&#x540E;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x4F1A;&#x57FA;&#x4E8E;&#x672A;&#x89E3;&#x5305;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x3002;&#x5728;&#x4EE5;&#x4E0B;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x4E24;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x90FD;&#x662F;&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x3002;</p>
+<pre><code>let optionalSquare: Square? = Square(sideLength: 2.5, name: &quot;optional square&quot;)
+let sideLength = optionalSquare?.sideLength
+</code></pre><h3 id="&#x679A;&#x4E3E;&#x548C;&#x7ED3;&#x6784;&#x4F53;">&#x679A;&#x4E3E;&#x548C;&#x7ED3;&#x6784;&#x4F53;</h3>
+<p>&#x4F7F;&#x7528;<code>enum</code>&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x3002;&#x5C31;&#x50CF;&#x7C7B;&#x548C;&#x5176;&#x4ED6;&#x7684;&#x547D;&#x540D;&#x7C7B;&#x578B;&#x4E00;&#x6837;&#xFF0C;&#x679A;&#x4E3E;&#x5185;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;&#x76F8;&#x5173;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>enum Rank: Int {
+    case ace = 1
+    case two, three, four, five, six, seven, eight, nine, ten
+    case jack, queen, king
+
+    func simpleDescription() -&gt; String {
+        switch self {
+        case .ace:
+            return &quot;ace&quot;
+        case .jack:
+            return &quot;jack&quot;
+        case .queen:
+            return &quot;queen&quot;
+        case .king:
+            return &quot;king&quot;
+        default:
+            return String(self.rawValue)
+        }
+    }
+}
+let ace = Rank.ace
+let aceRawValue = ace.rawValue
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x5199;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x901A;&#x8FC7;&#x6BD4;&#x8F83;rawValue&#x6765;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;Rank&#x7684;&#x503C;&#x3002;
+</code></pre><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Swift&#x4F1A;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x9010;&#x4E2A;&#x52A0;&#x4E00;&#x6765;&#x7ED9;&#x679A;&#x4E3E;&#x5143;&#x7D20;&#x8D4B;&#x539F;&#x751F;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x663E;&#x793A;&#x7ED9;&#x51FA;&#x7279;&#x5B9A;&#x7684;&#x503C;&#x6765;&#x6539;&#x53D8;&#x8FD9;&#x4E00;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x3002;
+&#x5728;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;<code>Ace</code>&#x88AB;&#x663E;&#x793A;&#x7ED9;&#x51FA;&#x4E86;&#x5B83;&#x7684;&#x539F;&#x751F;&#x503C;&#x4E3A;1&#xFF0C;&#x5269;&#x4E0B;&#x5143;&#x7D20;&#x7684;&#x539F;&#x751F;&#x503C;&#x4F1A;&#x4F9D;&#x6B21;&#x6309;&#x987A;&#x5E8F;&#x52A0;&#x4E00;&#x3002;&#x679A;&#x4E3E;&#x7684;&#x539F;&#x751F;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x8005;&#x6D6E;&#x70B9;&#x6570;&#x3002;
+&#x4F7F;&#x7528;<code>rawValue</code>&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x679A;&#x4E3E;&#x5143;&#x7D20;&#x7684;&#x539F;&#x751F;&#x503C;&#x3002;</p>
+<p>&#x4F7F;&#x7528;<code>init?(rawValue:)</code>&#x6784;&#x9020;&#x5668;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4E00;&#x4E2A;&#x539F;&#x751F;&#x503C;&#x6765;&#x521B;&#x5EFA;&#x51FA;&#x5BF9;&#x5E94;&#x7684;&#x679A;&#x4E3E;&#x5B9E;&#x4F8B;&#x3002;&#x5982;&#x679C;&#x539F;&#x751F;&#x503C;&#x53EF;&#x4EE5;&#x4ECE;&#x679A;&#x4E3E;&#x4E2D;&#x5339;&#x914D;&#x5230;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8FD4;&#x56DE;&#x8BE5;&#x679A;&#x4E3E;&#x5B9E;&#x4F8B;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;<code>nil</code>&#x3002;</p>
+<pre><code>if let convertedRank = Rank(rawValue: 3) {
+    let threeDescription = convertedRank.simpleDescription()
+}
+</code></pre><p>&#x679A;&#x4E3E;&#x7684;&#x503C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x771F;&#x5B9E;&#x7684;&#x503C;&#xFF0C;&#x5B83;&#x4E0D;&#x662F;&#x539F;&#x751F;&#x503C;&#x7684;&#x53E6;&#x4E00;&#x79CD;&#x5199;&#x6CD5;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;&#x5728;&#x67D0;&#x4E9B;&#x539F;&#x751F;&#x503C;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x4E0D;&#x7ED9;&#x679A;&#x4E3E;&#x63D0;&#x4F9B;&#x539F;&#x751F;&#x503C;&#x3002;</p>
+<pre><code>enum Suit {
+    case spades, hearts, diamonds, clubs
+
+    func simpleDescription() -&gt; String {
+        switch self {
+        case .spades:
+            return &quot;spades&quot;
+        case .hearts:
+            return &quot;hearts&quot;
+        case .diamonds:
+            return &quot;diamonds&quot;
+        case .clubs:
+            return &quot;clubs&quot;
+        }
+    }
+}
+let hearts = Suit.hearts
+let heartsDescription = hearts.simpleDescription()
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x7ED9;&#x4E0A;&#x9762;&#x7684;Suit&#x589E;&#x52A0;&#x4E00;&#x4E2A;color()&#x65B9;&#x6CD5;&#xFF0C;&#x5F53;spades&#x548C;clubs&#x65F6;&#x8FD4;&#x56DE;&quot;black&quot;, &#x53E6;&#x5916;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&quot;red&quot;
+</code></pre><p>&#x8BF7;&#x6CE8;&#x610F;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x4E2D;&#x5BF9;Suit&#x4E2D;hearts&#x7684;&#x4E24;&#x79CD;&#x4EE3;&#x6307;&#x5199;&#x6CD5;&#xFF1A;&#x5F53;&#x628A;&#x5B83;&#x8D4B;&#x503C;&#x7ED9;&#x5E38;&#x91CF;<code>hearts</code>&#x65F6;&#xFF0C;<code>Suit.hearts</code>&#x662F;&#x7528;&#x5168;&#x5199;&#x53BB;&#x4EE3;&#x6307;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x5E38;&#x91CF;&#x6CA1;&#x6709;&#x6307;&#x660E;&#x81EA;&#x5DF1;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x4F46;&#x662F;&#x5728;&#x679A;&#x4E3E;&#x5185;&#x90E8;&#x7684;<code>switch</code>&#x4E2D;&#xFF0C;&#x679A;&#x4E3E;&#x5143;&#x7D20;&#x662F;&#x7528;&#x7F29;&#x5199;(<code>.heart</code>)&#x6765;&#x4EE3;&#x6307;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x65F6;<code>self</code>&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x7C7B;&#x578B;&#x5C31;&#x662F;<code>Suit</code>&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;&#x77E5;&#x9053;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x679A;&#x4E3E;&#x7684;&#x7F29;&#x5199;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x679A;&#x4E3E;&#x6709;&#x539F;&#x751F;&#x503C;&#xFF0C;&#x90A3;&#x4E9B;&#x503C;&#x5728;&#x58F0;&#x660E;&#x65F6;&#x5C31;&#x88AB;&#x5B9A;&#x4E49;&#x597D;&#xFF0C;&#x90A3;&#x610F;&#x5473;&#x7740;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x679A;&#x4E3E;&#x5B9E;&#x4F8B;&#x90FD;&#x6709;&#x540C;&#x6837;&#x7684;&#x539F;&#x751F;&#x503C;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5BF9;&#x4E8E;&#x679A;&#x4E3E;&#x5143;&#x7D20;&#x800C;&#x8A00;&#xFF0C;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x8D4B;&#x503C;&#x7684;&#x9009;&#x62E9;&#x662F;&#x5F53;&#x4F60;&#x5B9E;&#x4F8B;&#x5316;&#x679A;&#x4E3E;&#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x503C;&#x662F;&#x53EF;&#x4EE5;&#x968F;&#x5B9E;&#x4F8B;&#x4E0D;&#x540C;&#x800C;&#x4E0D;&#x540C;&#x7684;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x5173;&#x8054;&#x7684;&#x503C;&#x89C6;&#x4E3A;&#x4E0E;&#x679A;&#x4E3E;&#x5B9E;&#x4F8B;&#x7684;&#x5B58;&#x50A8;&#x5C5E;&#x6027;&#x7C7B;&#x4F3C;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x8003;&#x8651;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4ECE;&#x670D;&#x52A1;&#x7AEF;&#x8BF7;&#x6C42;&#x83B7;&#x53D6;&#x65E5;&#x51FA;&#x548C;&#x65E5;&#x843D;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x8981;&#x4E48;&#x8FD4;&#x56DE;&#x8BF7;&#x6C42;&#x6240;&#x9700;&#x8981;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x8981;&#x4E48;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x9519;&#x8BEF;&#x63CF;&#x8FF0;&#x3002;</p>
+<pre><code>enum ServerResponse {
+    case result(String, String)
+    case failure(String)
+}
+
+let success = ServerResponse.result(&quot;6:00 am&quot;, &quot;8:09 pm&quot;)
+let failure = ServerResponse.failure(&quot;Out of cheese.&quot;)
+
+switch success {
+case let .result(sunrise, sunset):
+    print(&quot;Sunrise is at \(sunrise) and sunset is at \(sunset).&quot;)
+case let .failure(message):
+    print(&quot;Failure...  \(message)&quot;)
+}
+// Prints &quot;Sunrise is at 6:00 am and sunset is at 8:09 pm.&quot;
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x7ED9;ServerResponse&#x548C;switch&#x65B9;&#x6CD5;&#x589E;&#x52A0;&#x7B2C;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#x3002;
+</code></pre><p>&#x8BF7;&#x6CE8;&#x610F;&#x65E5;&#x51FA;&#x548C;&#x65E5;&#x843D;&#x65F6;&#x95F4;&#x662F;&#x5982;&#x4F55;&#x4ECE;ServerResponse&#x503C;&#x4E2D;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x5E76;switch&#x4E2D;&#x5339;&#x914D;&#x503C;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x4F7F;&#x7528;<code>struct</code>&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x3002;&#x7ED3;&#x6784;&#x4F53;&#x652F;&#x6301;&#x7C7B;&#x4E2D;&#x7684;&#x5F88;&#x591A;&#x884C;&#x4E3A;&#x7279;&#x6027;&#xFF0C;&#x5305;&#x62EC;&#x65B9;&#x6CD5;&#x548C;&#x6784;&#x9020;&#x5668;&#x3002;&#x7ED3;&#x6784;&#x4F53;&#x548C;&#x7C7B;&#x4E4B;&#x95F4;&#x6700;&#x5927;&#x7684;&#x533A;&#x522B;&#x4E4B;&#x4E00;&#x662F;&#x5F53;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4F20;&#x9012;&#x65F6;&#xFF0C;&#x7ED3;&#x6784;&#x4F53;&#x603B;&#x662F;&#x62F7;&#x8D1D;&#x526F;&#x672C;&#x4F20;&#x9012;&#x800C;&#x7C7B;&#x662F;&#x4F20;&#x9012;&#x5B9E;&#x4F8B;&#x7684;&#x5F15;&#x7528;&#x3002;</p>
+<pre><code>struct Card {
+    var rank: Rank
+    var suit: Suit
+    func simpleDescription() -&gt; String {
+        return &quot;The \(rank.simpleDescription()) of \(suit.simpleDescription())&quot;
+    }
+}
+let threeOfSpades = Card(rank: .three, suit: .spades)
+let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x5199;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x6574;&#x526F;&#x724C;&#xFF0C;&#x6BCF;&#x5F20;&#x724C;&#x90FD;&#x5305;&#x542B;&#x7B49;&#x7EA7;&#x548C;&#x82B1;&#x8272;&#x3002;
+</code></pre><h3 id="&#x534F;&#x8BAE;&#x548C;&#x6269;&#x5C55;">&#x534F;&#x8BAE;&#x548C;&#x6269;&#x5C55;</h3>
+<p>&#x4F7F;&#x7528;<code>Protocol</code>&#x53EF;&#x4EE5;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x534F;&#x8BAE;&#x3002;</p>
+<pre><code>protocol ExampleProtocol {
+    var simpleDescription: String { get }
+    mutating func adjust()
+}
+</code></pre><p>&#x7C7B;&#xFF0C;&#x679A;&#x4E3E;&#x548C;&#x7ED3;&#x6784;&#x4F53;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x534F;&#x8BAE;&#x3002;</p>
+<pre><code>class SimpleClass: ExampleProtocol {
+    var simpleDescription: String = &quot;A very simple class.&quot;
+    var anotherProperty: Int = 69105
+    func adjust() {
+        simpleDescription += &quot;  Now 100% adjusted.&quot;
+    }
+}
+var a = SimpleClass()
+a.adjust()
+let aDescription = a.simpleDescription
+
+struct SimpleStructure: ExampleProtocol {
+    var simpleDescription: String = &quot;A simple structure&quot;
+    mutating func adjust() {
+        simpleDescription += &quot; (adjusted)&quot;
+    }
+}
+var b = SimpleStructure()
+b.adjust()
+let bDescription = b.simpleDescription
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x7ED9;ExampleProtocol&#x589E;&#x52A0;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x8981;&#x6C42;&#x3002;&#x90A3;&#x4E48;&#x4F60;&#x5E94;&#x8BE5;&#x600E;&#x4E48;&#x505A;&#x624D;&#x80FD;&#x8BA9;SimpleClass&#x548C;SimpleStructure&#x90FD;&#x4ECD;&#x7136;&#x7B26;&#x5408;&#x8BE5;&#x534F;&#x8BAE;&#xFF1F;
+</code></pre><p>&#x8BF7;&#x6CE8;&#x610F;SimpleStructure&#x58F0;&#x660E;&#x4E2D;&#x7684;<code>mutating</code>&#x5173;&#x952E;&#x5B57;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x5B83;&#x662F;&#x7528;&#x6765;&#x4FEE;&#x9970;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x5F53;&#x524D;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x3002;SimpleClass&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x56E0;&#x4E3A;&#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x603B;&#x662F;&#x88AB;&#x5141;&#x8BB8;&#x4FEE;&#x6539;&#x8BE5;&#x7C7B;&#x3002;</p>
+<p>&#x4F7F;&#x7528;<code>extension</code>&#x53EF;&#x4EE5;&#x7ED9;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x7C7B;&#x578B;&#x589E;&#x52A0;&#x529F;&#x80FD;&#xFF0C;&#x6BD4;&#x5982;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x53EF;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6269;&#x5C55;&#x5C06;&#x534F;&#x8BAE;&#x4E00;&#x81F4;&#x6027;&#x6DFB;&#x52A0;&#x5230;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x58F0;&#x660E;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x5230;&#x4ECE;&#x5E93;&#x6216;&#x6846;&#x67B6;&#x5BFC;&#x5165;&#x7684;&#x7C7B;&#x578B;&#x3002;</p>
+<pre><code>extension Int: ExampleProtocol {
+    var simpleDescription: String {
+        return &quot;The number \(self)&quot;
+    }
+    mutating func adjust() {
+        self += 42
+    }
+}
+print(7.simpleDescription)
+// Prints &quot;The number 7&quot;
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x7ED9;Double&#x7C7B;&#x578B;&#x5199;&#x4E00;&#x4E2A;&#x6269;&#x5C55;&#x6765;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x7EDD;&#x5BF9;&#x503C;&#x5C5E;&#x6027;&#x3002;
+</code></pre><p>&#x53EF;&#x4EE5;&#x50CF;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x547D;&#x540D;&#x7C7B;&#x578B;&#x4E00;&#x6837;&#x4F7F;&#x7528;&#x534F;&#x8BAE;&#x540D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x7EC4;&#x6210;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x4F46;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x90FD;&#x53EF;&#x4EE5;&#x9075;&#x5FAA;&#x540C;&#x4E00;&#x4E2A;&#x534F;&#x8BAE;&#x3002;&#x5904;&#x7406;&#x7C7B;&#x578B;&#x4E3A;&#x534F;&#x8BAE;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x65F6;&#xFF0C;&#x534F;&#x8BAE;&#x5B9A;&#x4E49;&#x4E4B;&#x5916;&#x7684;&#x65B9;&#x6CD5;&#x4E0D;&#x53EF;&#x7528;&#x3002;</p>
+<pre><code>let protocolValue: ExampleProtocol = a
+print(protocolValue.simpleDescription)
+// Prints &quot;A very simple class.  Now 100% adjusted.&quot;
+// print(protocolValue.anotherProperty)  // Uncomment to see the error
+</code></pre><p>&#x5373;&#x4F7F;&#x53D8;&#x91CF;protocolValue&#x6709;&#x4E00;&#x4E2A;SimpleClass&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x7C7B;&#x578B;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x4ECD;&#x7136;&#x4F1A;&#x628A;&#x5B83;&#x5F53;&#x505A;&#x7ED9;&#x51FA;&#x7684;ExampleProtocol&#x7C7B;&#x578B;&#x6765;&#x5904;&#x7406;&#x3002;&#x8FD9;&#x5C31;&#x610F;&#x5473;&#x7740;&#x4E0D;&#x80FD;&#x8BBF;&#x95EE;&#x9664;&#x4E86;&#x5728;&#x5B83;&#x9075;&#x5FAA;&#x7684;&#x534F;&#x8BAE;&#x5185;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x53D8;&#x91CF;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x4EEC;&#x5728;&#x7C7B;&#x4E2D;&#x5B9E;&#x73B0;&#x4E86;&#x3002;</p>
+<h3 id="&#x9519;&#x8BEF;&#x5904;&#x7406;">&#x9519;&#x8BEF;&#x5904;&#x7406;</h3>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x9075;&#x5FAA;&#x4E86;<code>Error</code>&#x534F;&#x8BAE;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x8868;&#x793A;&#x9519;&#x8BEF;&#x3002;</p>
+<pre><code>enum PrinterError: Error {
+    case outOfPaper
+    case noToner
+    case onFire
+}
+</code></pre><p>&#x4F7F;&#x7528;<code>throw</code>&#x6765;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#xFF0C;&#x4F7F;&#x7528;<code>throws</code>&#x6765;&#x6807;&#x8BB0;&#x65B9;&#x6CD5;&#x4EE3;&#x8868;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x3002;&#x5982;&#x679C;&#x5728;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x629B;&#x51FA;&#x4E86;&#x9519;&#x8BEF;&#xFF0C;&#x65B9;&#x6CD5;&#x4F1A;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;&#xFF0C;&#x5E76;&#x4E14;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x4F1A;&#x5904;&#x7406;&#x629B;&#x51FA;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
+<pre><code>func send(job: Int, toPrinter printerName: String) throws -&gt; String {
+    if printerName == &quot;Never Has Toner&quot; {
+        throw PrinterError.noToner
+    }
+    return &quot;Job sent&quot;
+}
+</code></pre><p>&#x6709;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x5904;&#x7406;&#x9519;&#x8BEF;&#x3002;&#x4E00;&#x79CD;&#x662F;&#x4F7F;&#x7528;<code>do-catch</code>&#x3002;&#x5728;<code>do</code>&#x4EE3;&#x7801;&#x5757;&#x5185;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x53EF;&#x80FD;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x7684;&#x4EE3;&#x7801;&#x524D;&#x9762;&#x7528;<code>try</code>&#x6765;&#x4FEE;&#x9970;&#xFF0C;&#x5728;<code>catch</code>&#x4EE3;&#x7801;&#x5757;&#x5185;&#xFF0C;&#x9519;&#x8BEF;&#x4F1A;&#x9ED8;&#x8BA4;&#x4EE5;<code>error</code>&#x4E3A;&#x540D;&#x79F0;&#xFF0C;&#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7ED9;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<pre><code>do {
+    let printerResponse = try send(job: 1040, toPrinter: &quot;Bi Sheng&quot;)
+    print(printerResponse)
+} catch {
+    print(error)
+}
+// Prints &quot;Job sent&quot;
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x628A;printer&#x7684;&#x540D;&#x5B57;&#x53D8;&#x6210;&apos;Never Has Toner&apos;, &#x8FD9;&#x6837;send&#x65B9;&#x6CD5;&#x5C31;&#x4F1A;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;
+</code></pre><p>&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x591A;&#x4E2A;<code>catch</code>&#x4EE3;&#x7801;&#x5757;&#x6765;&#x5904;&#x7406;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x9519;&#x8BEF;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x50CF;&#x5728;<code>switch</code>&#x4E2D;&#x7684;<code>case</code>&#x4E00;&#x6837;&#x7ED9;error&#x5199;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x89C4;&#x5219;&#x3002;</p>
+<pre><code>do {
+    let printerResponse = try send(job: 1440, toPrinter: &quot;Gutenberg&quot;)
+    print(printerResponse)
+} catch PrinterError.onFire {
+    print(&quot;I&apos;ll just put this over here, with the rest of the fire.&quot;)
+} catch let printerError as PrinterError {
+    print(&quot;Printer error: \(printerError).&quot;)
+} catch {
+    print(error)
+}
+// Prints &quot;Job sent&quot;
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x589E;&#x52A0;&#x4EE3;&#x7801;&#x4EE5;&#x4FBF;&#x5728;do&#x4EE3;&#x7801;&#x5757;&#x5185;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x8BA9;&#x9519;&#x8BEF;&#x88AB;&#x7B2C;&#x4E00;&#x4E2A;catch&#x4EE3;&#x7801;&#x5757;&#x6240;&#x6355;&#x83B7;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x90A3;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x9519;&#x8BEF;&#xFF1F;&#x5982;&#x679C;&#x662F;&#x7B2C;&#x4E8C;&#x6216;&#x7B2C;&#x4E09;&#x4E2A;catch&#x6355;&#x83B7;&#x5462;&#xFF1F;
+</code></pre><p>&#x53E6;&#x5916;&#x4E00;&#x4E2D;&#x5904;&#x7406;&#x9519;&#x8BEF;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;<code>try?</code>,&#x5B83;&#x53EF;&#x4EE5;&#x628A;&#x7ED3;&#x679C;&#x8F6C;&#x4E3A;&#x4E00;&#x4E2A;&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x3002;&#x5982;&#x679C;&#x65B9;&#x6CD5;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF0C;&#x7279;&#x5B9A;&#x7684;&#x9519;&#x8BEF;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;&#xFF0C;&#x5E76;&#x4E14;&#x7ED3;&#x679C;&#x662F;<code>nil</code>, &#x5426;&#x5219;&#x6CA1;&#x6709;&#x9519;&#x8BEF;&#x7684;&#x8BDD;&#xFF0C; &#x7ED3;&#x679C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x53EF;&#x9009;&#x7C7B;&#x578B;&#x3002;</p>
+<pre><code>let printerSuccess = try? send(job: 1884, toPrinter: &quot;Mergenthaler&quot;)
+let printerFailure = try? send(job: 1885, toPrinter: &quot;Never Has Toner&quot;)
+</code></pre><p>&#x4F7F;&#x7528;<code>defer</code>&#x53EF;&#x4EE5;&#x4FEE;&#x9970;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#x5C06;&#x5728;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x5B8C;&#x5176;&#x4ED6;&#x4EE3;&#x7801;&#x540E;&#x5E76;&#x4E14;&#x5728;&#x8FD4;&#x56DE;&#x503C;&#x4E4B;&#x524D;&#x6267;&#x884C;&#x3002;&#x5E76;&#x4E14;&#x5373;&#x4F7F;&#x65B9;&#x6CD5;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x8FD9;&#x4E9B;&#x4EE3;&#x7801;&#x4F9D;&#x7136;&#x4F1A;&#x6267;&#x884C;&#x3002;
+&#x53EF;&#x4EE5;&#x4F7F;&#x7528;defer&#x5C06;&#x5B89;&#x88C5;&#x4EE3;&#x7801;&#x548C;&#x6E05;&#x7406;&#x4EE3;&#x7801;&#x4E00;&#x8D77;&#x7F16;&#x5199;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x65F6;&#x95F4;&#x6267;&#x884C;&#x3002;</p>
+<pre><code>var fridgeIsOpen = false
+let fridgeContent = [&quot;milk&quot;, &quot;eggs&quot;, &quot;leftovers&quot;]
+
+func fridgeContains(_ food: String) -&gt; Bool {
+    fridgeIsOpen = true
+    defer {
+        fridgeIsOpen = false
+    }
+
+    let result = fridgeContent.contains(food)
+    return result
+}
+fridgeContains(&quot;banana&quot;)
+print(fridgeIsOpen)
+// Prints &quot;false&quot;
+</code></pre><h3 id="&#x6CDB;&#x578B;">&#x6CDB;&#x578B;</h3>
+<p>&#x5728;&#x5C16;&#x62EC;&#x53F7;&#x5185;&#x5199;&#x4E00;&#x4E2A;&#x540D;&#x79F0;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x6CDB;&#x578B;&#x51FD;&#x6570;&#x6216;&#x7C7B;&#x578B;&#x3002;</p>
+<pre><code>func makeArray&lt;Item&gt;(repeating item: Item, numberOfTimes: Int) -&gt; [Item] {
+    var result = [Item]()
+    for _ in 0..&lt;numberOfTimes {
+        result.append(item)
+    }
+    return result
+}
+makeArray(repeating: &quot;knock&quot;, numberOfTimes: 4)
+</code></pre><p>&#x4F60;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x51FD;&#x6570;&#xFF0C;&#x65B9;&#x6CD5;&#xFF0C;&#x7C7B;&#xFF0C;&#x679A;&#x4E3E;&#x548C;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x6CDB;&#x578B;&#x3002;</p>
+<pre><code>// Reimplement the Swift standard library&apos;s optional type
+enum OptionalValue&lt;Wrapped&gt; {
+    case none
+    case some(Wrapped)
+}
+var possibleInteger: OptionalValue&lt;Int&gt; = .none
+possibleInteger = .some(100)
+</code></pre><p>&#x5728;&#x65B9;&#x6CD5;&#x4F53;&#x4E4B;&#x524D;&#x4F7F;&#x7528;<code>where</code>&#x5173;&#x952E;&#x5B57;&#x53EF;&#x4EE5;&#x7ED9;&#x6CDB;&#x578B;&#x6307;&#x660E;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x5217;&#x8868;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8981;&#x6C42;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x534F;&#x8BAE;&#xFF0C;&#x6216;&#x8005;&#x8981;&#x6C42;&#x4E24;&#x4E2A;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#xFF0C;&#x6216;&#x8005;&#x8981;&#x6C42;&#x7C7B;&#x5FC5;&#x987B;&#x7EE7;&#x627F;&#x81EA;&#x67D0;&#x4E2A;&#x7236;&#x7C7B;&#x3002;</p>
+<pre><code>func anyCommonElements&lt;T: Sequence, U: Sequence&gt;(_ lhs: T, _ rhs: U) -&gt; Bool
+    where T.Element: Equatable, T.Element == U.Element
+{
+    for lhsItem in lhs {
+        for rhsItem in rhs {
+            if lhsItem == rhsItem {
+                return true
+            }
+        }
+    }
+    return false
+}
+anyCommonElements([1, 2, 3], [3])
+</code></pre><pre><code>&#x5C1D;&#x8BD5;&#x7EC3;&#x4E60;
+&#x4FEE;&#x6539;anyCommonElements&#x65B9;&#x6CD5;&#xFF0C;&#x8BA9;&#x5B83;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7531;&#x4EFB;&#x610F;&#x4E24;&#x4E2A;&#x5E8F;&#x5217;&#x5171;&#x540C;&#x5143;&#x7D20;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;&#x3002;
+</code></pre><p>&#x5199;&#x6CD5;<code>&lt;T: Equatable&gt;</code>&#x548C;&#x5199;&#x6CD5;<code>&lt;T&gt; ... where T: Equatable</code> &#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+
                                 
                                 </section>
                             
@@ -429,7 +778,7 @@ print(mappedNumbers)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"一次Swift旅行","level":"1.3","depth":1,"previous":{"title":"关于","level":"1.2","depth":1,"path":"About.md","ref":"About.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"A Swift Tour.md","mtime":"2020-08-24T15:14:12.704Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-23T10:45:59.193Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"一次Swift旅行","level":"1.3","depth":1,"previous":{"title":"关于","level":"1.2","depth":1,"path":"About.md","ref":"About.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"A Swift Tour.md","mtime":"2020-08-26T17:03:30.776Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-23T10:45:59.193Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
