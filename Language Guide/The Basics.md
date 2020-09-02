@@ -332,3 +332,105 @@ var maxAmplitudeFound = AudioSample.min
 这里，`AudioSample`就被定义成了UInt16类型的别名。因为它是一个别名，所以调用`AudioSample.min`实际上就是调用的`UInt16.min`，这个值是0，被提供给变量`maxAmplitudeFound`作为其初始值。
 
 
+#### 布尔值
+
+Swift有一种基础的`Boolean`类型，叫做`Bool`。布尔值被称为逻辑值，因为他们只能是真或者假。Swift给布尔类型提供了两个常量，`true`和`false`:
+```
+let orangesAreOrange = true
+let turnipsAreDelicious = false
+```
+
+`orangesAreOrange`和`turnipsAreDelicious`两个变量由于初始值是布尔型字面值，所以会被自动推断为Bool类型。就像前面我们提到的Double和Int类型一样，在创建变量或常量时，不必声明类型为Bool，给他们赋予true或者false的初始值即可。在用已知类型的值来初始化变量或者常量时，类型推断会帮助Swift代码变得简洁和易读。
+
+布尔值在在使用像if语句一样的条件语句时会特别有用：
+```
+if turnipsAreDelicious {
+    print("Mmm, tasty turnips!")
+} else {
+    print("Eww, turnips are horrible.")
+}
+// Prints "Eww, turnips are horrible.
+```
+
+像if语言一样的条件语句会在[控制流]()章节有更详细的介绍。
+
+Swift的类型安全会防止非布尔值替代布尔值，下面这个例子就会抛出编译错误：
+```
+let i = 1
+if i {
+    // this example will not compile, and will report an error
+}
+```
+
+但是，下面这个例子是有效的:
+```
+let i = 1
+if i == 1 {
+    // this example will compile successfully
+}
+```
+
+`i == 1`比较的结果就是Bool类型，因此第二个例子会通过类型检查。像`i == 1`这种比较表达式在[基本操作符]()章节有介绍。
+
+和Swift中其他的类型安全的例子一样，这种方法会避免意外错误的发生，并且可以确保一段特定的代码的意图清晰明确。
+
+元组会把多个值组合到一起成为一个单一的混合值。一个元组中的值可以是任何类型，并且各个值不必是同一种类型。
+在这个例子中，`(404, "Not Found")`就是一个面熟HTTP状态码的元组。一个HTTP状态码是当你请求网页数据时，由web服务端返回的特殊值。当你请求的网页不存在时，返回的状态码就是“404 Not Found”。
+```
+let http404Error = (404, "Not Found")
+// http404Error is of type (Int, String), and equals (404, "Not Found")
+```
+
+这个`(404, "Not Found")`元组是把一个Int类型和一个String类型的值组合在一起，这两部分就是HTTP状态码的数字部分和人类可读的描述部分。
+他可以被描述为“一个类型为`(Int, String)`”的元组。
+
+你可以用任何排列组合的方式来创建一个元组，并且其中包含的任意不同的类型。比如这样`(Int, Int, Int)`或者这样`(String, Bool)`或者其他你需要的任何排列组合。
+
+你可以从一个元组中解析出单个的变量或者常量，通常的做法如下：
+```
+let (statusCode, statusMessage) = http404Error
+print("The status code is \(statusCode)")
+// Prints "The status code is 404"
+print("The status message is \(statusMessage)")
+// Prints "The status message is Not Found
+```
+
+当你分解析元组时，如果你只需要元组中的一部分值，那么其余不需要的值可以使用下划线(_)来忽略其他部分值：
+```
+let (justTheStatusCode, _) = http404Error
+print("The status code is \(justTheStatusCode)")
+// Prints "The status code is 404
+```
+
+还有一点，你可以使用从零开始的数字下标来访问元组中单一元素的值：
+```
+print("The status code is \(http404Error.0)")
+// Prints "The status code is 404"
+print("The status message is \(http404Error.1)")
+// Prints "The status message is Not Found"
+```
+
+你还可以在元组定义时，给其中的每个元素命名：
+```
+let http200Status = (statusCode: 200, description: "OK")
+```
+
+如果你给每个元素都命名了，那么就可以用这些名字来访问这些元素的值：
+```
+print("The status code is \(http200Status.statusCode)")
+// Prints "The status code is 200"
+print("The status message is \(http200Status.description)")
+// Prints "The status message is OK"
+```
+
+元组在作为函数返回值时尤其有用。比如一个试图获取网页的函数可以返回一个`(Int, String)`类型的元组，来描述请求的成功或者失败。
+相比于只返回一个单一类型的值，通过返回一个拥有两个不同类型不同值的元组，函数可以提供更多有关它的结果的有用信息。要获取更多相关信息，
+可以参考[多返回值的函数]()章节。
+
+```
+注意
+元组对把相关联的值简单组合在一起很有用。但它们不适用于创建复杂的数据结构。如果你的数据结构很可能更复杂，那么把它定义成类或者结构体更合适。
+要获取更多相关信息，
+可以参考"结构体和类"章节。
+```
+
