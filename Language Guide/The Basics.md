@@ -195,15 +195,15 @@ Swift是一种类型安全的语言。一种类型安全的语言会鼓励你明
 
 正是由于有了类型推断，相比于像C或者Objective-C之类的语言，Swift几乎很少要求对变量进行类型声明。常量和变量仍然是类型明确的，只不过大部分类型确定的工作都已经自动为你做好了。
 
-类型推断尤其是在你声明了一个有初始值的常量或者变量时有用处。这个过程其实就是在声明常量或者变量时，给它一个字面值。（一个字面值就是源代码中直接出现的那个值，比如下面例子中的42和3.14159）。
+类型推断尤其是在你声明了一个有初始值的常量或者变量时有用处。这个过程其实就是在声明常量或者变量时，给它一个字面量。（一个字面量就是源代码中直接出现的那个值，比如下面例子中的42和3.14159）。
 
-例如，如果你新建了一个常量，但是没有指明它的类型，却给了它一个字面值42，Swift就会推断出你想要这个常量的类型是Int，因为你用了一个像整数一样的数字来初始化它：
+例如，如果你新建了一个常量，但是没有指明它的类型，却给了它一个字面量42，Swift就会推断出你想要这个常量的类型是Int，因为你用了一个像整数一样的数字来初始化它：
 ```
 let meaningOfLife = 42
 // meaningOfLife is inferred to be of type Int
 ```
 
-同样的，如果你没有给浮点数的字面值指明类型，Swift也会推断出你想创建一个Double类型：
+同样的，如果你没有给浮点数的字面量指明类型，Swift也会推断出你想创建一个Double类型：
 ```
 let pi = 3.14159
 // pi is inferred to be of type Double
@@ -216,17 +216,17 @@ let anotherPi = 3 + 0.14159
 // anotherPi is also inferred to be of type Double
 ```
 
-上面例子中，3的字面值类型没有明确，所以由于表达式中另一部分浮点数的出现，推断出输出Double类型是比较合适的。
+上面例子中，3的字面量类型没有明确，所以由于表达式中另一部分浮点数的出现，推断出输出Double类型是比较合适的。
 
-##### 数值的字面值
+##### 数值的字面量
 
-整数的字面值可以写成：
+整数的字面量可以写成：
 + 无前缀的十进制数字。
 + 以`0b`为前缀的二进制数字。
 + 以`0o`为前缀的八进制数字。
 + 以`0x`为前缀的十六进制数字。
 
-下面所有的整数字面值的十进制值都是17：
+下面所有的整数字面量的十进制值都是17：
 ```
 let decimalInteger = 17
 let binaryInteger = 0b10001       // 17 in binary notation
@@ -234,7 +234,7 @@ let octalInteger = 0o21           // 17 in octal notation
 let hexadecimalInteger = 0x11     // 17 in hexadecimal notation
 ```
 
-浮点数的字面值可以是无前缀的十进制数，或者以`0x`为前缀的十六进制数。它们的小数点两边都必须有一个数字（或十六进制数）。十进制的浮点数可以有一个可选择的由大写或者小写e表示的指数。十六进制的浮点数必须要有一个由大写或者小写p表示的指数。
+浮点数的字面量可以是无前缀的十进制数，或者以`0x`为前缀的十六进制数。它们的小数点两边都必须有一个数字（或十六进制数）。十进制的浮点数可以有一个可选择的由大写或者小写e表示的指数。十六进制的浮点数必须要有一个由大写或者小写p表示的指数。
 对于指数为exp的十进制数，值就是基数乘以10<sup>exp</sup>。
 
 + 1.25e2 等于 1.25 x 102, 或者 125.0.
@@ -245,14 +245,14 @@ let hexadecimalInteger = 0x11     // 17 in hexadecimal notation
 + 0xFp2 等于 15 x 22, 或者 60.0.
 + 0xFp-2 等于 15 x 2-2, 或者 3.75.
 
-下面这些所有浮点数的字面值的十进制都是12.1875：
+下面这些所有浮点数的字面量的十进制都是12.1875：
 ```
 let decimalDouble = 12.1875
 let exponentDouble = 1.21875e1
 let hexadecimalDouble = 0xC.3p0
 ```
 
-数字的字面值允许包含其他额外的格式来使其具有更好的可读性。无论是整数还是浮点数，都可以用额外的零进行填充，并且可以添加下划线来增强可读性。下面的字面值都不会因为格式化而改变：
+数字的字面量允许包含其他额外的格式来使其具有更好的可读性。无论是整数还是浮点数，都可以用额外的零进行填充，并且可以添加下划线来增强可读性。下面的字面量都不会因为格式化而改变：
 ```
 let paddedDouble = 000123.456
 let oneMillion = 1_000_000
@@ -261,7 +261,7 @@ let justOverOneMillion = 1_000_000.000_000_1
 
 ##### 数字类型转换
 
-对于所有通用的整数型常量或变量，即使明确它们是非负数，也要使用Int类型。在每个场景中都使用这个默认的整数类型就意味着你代码中的整数型常量和变量是可以直接互相操作的，并且这也和整数型字面值所推断出的类型相一致。
+对于所有通用的整数型常量或变量，即使明确它们是非负数，也要使用Int类型。在每个场景中都使用这个默认的整数类型就意味着你代码中的整数型常量和变量是可以直接互相操作的，并且这也和整数型字面量所推断出的类型相一致。
 
 只有当手边的任务有明确的需要，比如来自外部资源数据的大小明确，出于性能考虑的内存使用或其他必要优化时，才会使用其他整数类型。
 在这些情况下使用明确大小的类型有助于捕获任何意外的值溢出，并隐式记录所使用数据的性质。
@@ -310,7 +310,7 @@ let integerPi = Int(pi)
 浮点数用这种方法转换成整型总是会被舍去小数部分而变小，这就意味着，4.75变成4， -3.9变成-3。
 ```
 注意
-数字常量和变量的组合规则是随着数字字面值不同而不同的。字面值3可以直接和字面值0.14159相加，是因为数字字面值没有显式的类型。
+数字常量和变量的组合规则是随着数字字面量不同而不同的。字面量3可以直接和字面量0.14159相加，是因为数字字面量没有显式的类型。
 只有在编译器对其求值时才推断出它们的类型。
 ```
 
@@ -340,7 +340,7 @@ let orangesAreOrange = true
 let turnipsAreDelicious = false
 ```
 
-`orangesAreOrange`和`turnipsAreDelicious`两个变量由于初始值是布尔型字面值，所以会被自动推断为Bool类型。就像前面我们提到的Double和Int类型一样，在创建变量或常量时，不必声明类型为Bool，给他们赋予true或者false的初始值即可。在用已知类型的值来初始化变量或者常量时，类型推断会帮助Swift代码变得简洁和易读。
+`orangesAreOrange`和`turnipsAreDelicious`两个变量由于初始值是布尔型字面量，所以会被自动推断为Bool类型。就像前面我们提到的Double和Int类型一样，在创建变量或常量时，不必声明类型为Bool，给他们赋予true或者false的初始值即可。在用已知类型的值来初始化变量或者常量时，类型推断会帮助Swift代码变得简洁和易读。
 
 布尔值在在使用像if语句一样的条件语句时会特别有用：
 ```
@@ -457,3 +457,165 @@ let convertedNumber = Int(possibleNumber)
 由于构造器方法也许会失败，所以它的返回结果是可选的Int类型，而不是Int类型。可选的Int类型写作`Int?`, 不是`Int`。
 这个问号代表了它的值是可选的，意味着它肯能包含一些Int类型的值，也可能根本不包含任何值。
 （但它不能包含任何其他的类型值，比如布尔值或者字符串值，它要么是一个Int值，要么什么值都没有。）
+
+##### nil
+你可以通过赋一个特殊的值nil来把一个可选类型变量设为无值状态。
+```
+var serverResponseCode: Int? = 404
+// serverResponseCode contains an actual Int value of 404
+serverResponseCode = nil
+// serverResponseCode now contains no value
+```
+
+```
+注意
+你不能把nil赋给一个非可选类型的变量或者常量。如果一个常量或者变量在当前条件下需要有一个无值状态，那么把它生命成合适类型的可选值即可。
+```
+
+如果你定义了一个可选类型变量，但是没有给他默认值，那么这个变量会自动被赋予nil值：
+```
+var surveyAnswer: String?
+// surveyAnswer is automatically set to nil
+```
+
+```
+注意
+Swift的nil和Objective-C中的nil是不一样的。Objective-C中的nil是一个指向不存在的对象的指针。而Swift中，nil不是一个指针，它代表一个
+类型值的缺失。任何类型的可选值都可以设为nil，不仅仅是对象类型。
+```
+
+#### If语句和强制解包
+
+你可以使用if语句来通过把可选类型变量和nil相比来判断它是否有值。这个比较可以用”==“或者”!=“来完成.
+如果可选类型有值，那么它一定不等于nil：
+```
+if convertedNumber != nil {
+    print("convertedNumber contains some integer value.")
+}
+// Prints "convertedNumber contains some integer value.
+```
+
+一旦你确定可选类型有值，那么你可以在变量名后面加感叹号(!)来访问它的值。这个感叹号的作用是说，”我知道这个可选类型变量的确有值，请直接使用吧。“
+这个就是可选类型的强制解包：
+```
+if convertedNumber != nil {
+    print("convertedNumber has an integer value of \(convertedNumber!).")
+}
+// Prints "convertedNumber has an integer value of 123.
+```
+
+想要了解更多有关if语句的信息，请参考[控制流]()章节。
+
+```
+注意
+如果使用!来访问一个没有值的可选类型变量会触发一个运行时错误。所以在使用!进行强制解包前一定要确保可选类型包含一个非nil的值。
+```
+
+#### 可选绑定
+
+你可以使用可选绑定来判断一个可选类型是否有值，并且如果有值的话，这个值可以被直接赋予一个临时的常量或者变量。
+可选绑定通常会被用在if和while的条件语句中来检查可选类型的值，并且会把值赋给一个常量或变量作为操作的一部分。if和while语句在[控制流]()章节中有更详细的介绍。
+
+在if语句中写一个可选绑定，如下：
+```
+if let constantName = someOptional {
+    statements
+}
+```
+
+你可以重写可选类型章节中`possibleNumber`这个例子，来使用可选绑定而不是强制解包：
+```
+if let actualNumber = Int(possibleNumber) {
+    print("The string \"\(possibleNumber)\" has an integer value of \(actualNumber)")
+} else {
+    print("The string \"\(possibleNumber)\" could not be converted to an integer")
+}
+// Prints "The string "123" has an integer value of 123
+```
+
+这段代码的意思是：
+"如果`Int(possibleNumber)`返回的可选Int类型包含值，那么就把这个值赋给一个叫做`actualNumber`的常量"
+如果转换是成功的，`actualNumber`常量就可以在if语句的代码块中被访问和使用，并且这个常量也用这个可选类型所包含的值初始化过了，
+所以访问`actualNumber`时就不需要在后缀使用!进行解包操作。在这个例子中，`actualNumber`被简单地用来打印转换结果。
+
+变量和常量都支持使用可选绑定。如果你想要在if语句的第一段代码块中更改`actualNumber`的值，那么你可以写成`if var actualNumber`,
+这个可选类型中包含的值将会作为变量而不是常量被访问。
+
+你可以根据需要在一个if语句中包含多个可选绑定和布尔值条件，它们之间用逗号分开即可。
+如果其中任何一个可选绑定的值是nil或者任何一个布尔条件的值是false，那么整个if语句的条件就是false。
+下面的if语句是等效的：
+```
+if let firstNumber = Int("4"), let secondNumber = Int("42"), firstNumber < secondNumber && secondNumber < 100 {
+    print("\(firstNumber) < \(secondNumber) < 100")
+}
+// Prints "4 < 42 < 100"
+
+if let firstNumber = Int("4") {
+    if let secondNumber = Int("42") {
+        if firstNumber < secondNumber && secondNumber < 100 {
+            print("\(firstNumber) < \(secondNumber) < 100")
+        }
+    }
+}
+// Prints "4 < 42 < 100"
+```
+
+```
+注意
+在if语句中由可选绑定所创建的常量和变量仅在if语句的代码块中是可用的。
+与此相反，在一个guard语句中创建的常量和变量在guard下方的代码中都是可用的。这在[提前退出]()章节中有介绍。
+```
+
+#### 可选类型的隐式解包
+
+正如上面所描述的，可选类型表明一个常量或变量允许不存在值。可选类型可以在if语句中判断出其值是否存在，
+并且如果存在值的话，可以使用可选绑定的方法来对其解包进而访问它的值。
+
+有时从程序的结构中可以清楚地看出一个可选类型在初次赋值后总是有值。在一些场景中，由于可选类型可以很安全地被假定总是有值，所以每次访问它时，移除对它的检查和解包是很有用的。
+
+这种可选类型被定义为隐式解包可选类型。你可以通过在类型后加感叹号而不是问号来定义一个隐式解包的可选类型。
+不是像之前那样在使用变量时，在可选类型变量后加感叹号，而是在声明可选类型时在类型后面加感叹号。
+
+当一个可选类型的值在被定义时就存在并且在之后可以确定都一直存在，此时隐式解包就很有用。Swift中隐式解包的主要应用是在类的初始化中，在[Unowned References and Implicitly Unwrapped Optional Properties]()章节中有介绍。
+
+在这些场景背后，隐式解包的可选类型就是一个普通的可选类型，只不过可以像非可选类型一样使用，并且在每次被访问时无须进行解包。
+下面的例子展示了一个可选类型字符串和一个隐式解包可选类型字符串在访问它们的值时的不同之处：
+```
+let possibleString: String? = "An optional string."
+let forcedString: String = possibleString! // requires an exclamation point
+
+let assumedString: String! = "An implicitly unwrapped optional string."
+let implicitString: String = assumedString // no need for an exclamation point
+```
+
+你可以把隐式解包的可选类型想象成在需要时有权限强制解包的可选类型。当你使用一个隐式解包可选类型的值时，Swift首先会把它当做一个普通的可选类型值来使用，
+如果它不能被当作可选类型使用时，就会对它强制解包。在上面的代码中，可选类型assumedString的值在赋给implicitString之前进行了强制解包，因为implicitString不是可选类型，就是一个字符串类型。
+在下面的代码中，optionalString没有一个明确的类型因为它是一个普通的可选类型。
+```
+let optionalString = assumedString
+// The type of optionalString is "String?" and assumedString isn't force-unwrapped.
+```
+
+如果一个隐式解包可选类型的值是nil，此时你试图获取它的值，就会触发一个运行时错误。这个结果和你试图通过感叹号来获取一个不存在值的普通可选类型是一样的。
+你可以用检查普通可选类型的值的方式来检查隐式解包可选类型的值是否是nil：
+```
+if assumedString != nil {
+    print(assumedString!)
+}
+// Prints "An implicitly unwrapped optional string.
+```
+
+你也可以在一个语句中对隐式解包的可选类型使用可选绑定来检查并获取它的值：
+```
+if let definiteString = assumedString {
+    print(definiteString)
+}
+// Prints "An implicitly unwrapped optional string.
+```
+
+```
+注意
+当一个变量在随后的某个地方可能变为nil时，请不要使用隐式解包的可选类型。
+在一个变量的生命周期中，如果你需要对它进行nil检查，那么就使用普通可选类型。
+```
+
