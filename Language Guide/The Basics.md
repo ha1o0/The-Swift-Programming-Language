@@ -619,3 +619,114 @@ if let definiteString = assumedString {
 在一个变量的生命周期中，如果你需要对它进行nil检查，那么就使用普通可选类型。
 ```
 
+#### 错误处理
+
+你可以使用错误处理来对程序运行中可能遇到的错误进行响应。与可选类型使用值的存在与不存在来代表函数的成功与否不同，错误处理允许定义错误的类型，并且如果有必要的话，可以把错误抛给程序的另一部分去处理。
+
+当一个函数内部发生了错误，它就会抛出这个异常。这个函数的调用者可以使用`catch`来捕捉这个异常并作出合适的处理。
+```
+func canThrowAnError() throws {
+    // this function may or may not throw an error
+}
+```
+
+一个函数在声明时包含`throw`关键字就代表它可以抛出错误。当你调用这种可以抛出错误的异常时你需要在语句前加上`try`关键字。
+
+Swift会自动把当前作用域的错误向上抛出直到遇到一个`catch`分句来处理错误。
+```
+do {
+    try canThrowAnError()
+    // no error was thrown
+} catch {
+    // an error was thrown
+}
+```
+
+用`do`关键字创建一个作用域，在这个作用域中的错误允许被传递到一个或多个`catch`语句中进行处理。
+
+这里是一个用错误处理来处理不同错误条件的例子：
+```
+func makeASandwich() throws {
+    // ...
+}
+
+do {
+    try makeASandwich()
+    eatASandwich()
+} catch SandwichError.outOfCleanDishes {
+    washDishes()
+} catch SandwichError.missingIngredients(let ingredients) {
+    buyGroceries(ingredients)
+}
+```
+
+在这个例子中，如果没有干净的盘子或者任何原材料缺少，那么makeASandwich函数就会抛出一个错误。
+因为这个函数可能会抛出错误，所以它的调用者需要用`try`表达式去调用它。通过把函数调用放在一个`do`语句中，任何错误都会传递到`catch`从句中进行处理。
+
+如果没有错误抛出，那么就会继续执行下面的eatASandwich方法。
+如果有错误抛出，并且错误类型是SandwichError.outOfCleanDishes，那么就会走第一个case,将会执行washDishes方法。同样的，如果错误类型是SandwichError.missingIngredients，那么就会走第二个case，执行buyGroceries方法，同时相关的字符串值也会被catch所传递进去。
+
+错误的抛出，捕获以及传递都会在[错误处理]()章节有更详细的介绍。
+
+#### 断言和先决条件
+
+断言和先决条件是在运行时进行的检查。你可以使用他们来确保在执行更深处的代码之前一个重要条件必须满足。如果断言或者先决条件中的布尔条件结果是true，那么代码会继续照常执行。如果条件结果是false，程序的当前状态就会变成无效，代码执行终止并且应用会直接退出。
+
+你可以使用断言和先决条件来表达出你做出的假设或者你编写代码时的预期结果，因此你可以把它包含进你的程序中作为代码的一部分。断言会帮助你在开发过程中找出错误以及对代码结果不正确的假设。先决条件会帮助你在生产环境中检测问题。
+
+除了在运行时验证你的期望，断言和先决条件还可以成为代码中有用的文档清单。不像错误处理中讨论的错误条件那样，断言和先决条件不能用来处理可恢复的或者期望的错误。因为失败的断言和先决条件意味着程序状态的无效，没有办法可以捕捉这种失败的断言。
+
+使用断言和先决条件并不是要去替代当条件无效时就不去执行代码的设计。但是，使用它们可以在无效状态发生时，能够强制执行有效数据和状态来使应用程序更容易终止，这样就会帮助问题更容易被调试出来。无效状态一被检测出来就终止执行也会帮助减少由无效状态引起的破坏。
+
+断言和先决条件的不同点在于它们什么时候会被检查： 断言仅仅在调试模式中会被检查，而先决条件在调试和生产两种模式下都会检查。在生产构建模式中，断言内的条件不会被检查。这意味着你可以在开发过程中使用任意多的断言而不会影响生产模式的表现。
+
+#### 用断言调试
+你可以通过调用Swift标准函数库中的` assert(_:_:file:line:)`函数来写一个断言。
+这个函数的参数是一个结果为true或者false的表达式和一个展示条件结果为false时的消息。例如：
+```
+let age = -3
+assert(age >= 0, "A person's age can't be less than zero.")
+// This assertion fails because -3 is not >= 0.
+```
+
+在这个例子中，如果`age >= 0`的结果是true（即age是非负数），那么代码就会继续执行。如果age的值是负数，上面代码中`age >= 0`的结果就是false，断言失败，程序终止。
+
+你可以忽略断言消息---例如，当它只是之前断言的重复时：
+```
+assert(age >= 0)
+```
+
+如果代码已经检查过条件了，你可以用`assertionFailure(_:file:line:) `函数来表明断言失败，例如：
+```
+if age > 10 {
+    print("You can ride the roller-coaster or the ferris wheel.")
+} else if age >= 0 {
+    print("You can ride the ferris wheel.")
+} else {
+    assertionFailure("A person's age can't be less than zero.")
+}
+```
+
+
+#### 强制先决条件
+无论什么时候，只要一个条件有可能是false，那么就可以使用先决条件，但是一定要是true的时候才能继续执行你的代码。
+例如，使用先决条件来来检查下表是否越界，或者检查函数所传递的值是否有效。
+
+你可以通过调用`precondition(_:_:file:line:)`函数来写一个先决条件。这个函数的参数是一个结果为true或者false的表达式和一个展示条件结果为false时的消息。例如：
+```
+// In the implementation of a subscript...
+precondition(index > 0, "Index must be greater than zero.")
+```
+
+当然你也可以调用`preconditionFailure(_:file:line:)`来表明失败已经发生---例如，如果一个switch语句的默认分支被执行，但是所有有效数据其实应该被switch的其他分支中的一个进行处理。
+
+```
+注意
+如果你使用未检查(-Ounchecked)模式进行编译，先决条件是不会被检查的。编译器此时会默认所有先决条件总是true，并且相应地它会优化你的代码。
+然而，无论优化设置如何，fatalError(_:file:line:)函数总是会终止程序的执行。
+你可以在做原型设计和早期开发过程中使用fatalError(_:file:line:)函数来创建一些代码桩来代表这里暂时还未实现，写法可以是'fatalError("Unimplemented")'。
+因为致命错误永远也不会被优化器省略掉，所以不像断言和先决条件，你可以确保当程序遇到桩时执行就会终止。
+```
+
+
+
