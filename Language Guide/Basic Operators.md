@@ -107,3 +107,139 @@ a = (b x some multiplier) + remainder
 对于负数b而言，b的负数符号会被忽略，这意味着`a % b`和`a % -b`的结果是一样的。
 
 
+##### 一元负号
+
+一个数字前加一个一元负号`-`前缀，值就变为相反数。
+```
+let three = 3
+let minusThree = -three       // minusThree 等于 -3
+let plusThree = -minusThree   // plusThree 等于 3, 或者-(-3)
+```
+
+一元负号是直接紧贴操作数前，中间不能有空格。
+
+###### 一元加号
+
+一元加号会直接返回它所操作的数字值，不会有任何改变：
+```
+let minusSix = -6
+let alsoMinusSix = +minusSix  // alsoMinusSix 等于 -6
+```
+
+尽管一元加号实际上什么都没做，但是你可以在正数前面加上它来保持和负数前的负号相对称。
+
+#### 混合赋值运算符
+
+和C语言一样，Swift也提供了混合赋值运算符，它把等号(=)和其它运算符结合在一起。加等于赋值运算符(+=)就是一个例子：
+```
+var a = 1
+a += 2
+// a 现在的值是 3
+```
+
+表达式`a += 2`就是`a = a + 2`的简写形式。实际上，就是把加号和等号混合在一个运算符中，并且同时发挥两个运算符的作用。
+```
+注意
+混合运算符没有返回值。例如，不能这样写'let b = a += 2'.
+```
+
+更多的有关Swift标准库中运算符的信息，可以在[运算符定义]()章节查看。
+
+#### 比较运算符
+
+Swift支持以下比较运算符：
++ 双等于 (a == b)
++ 不等于 (a != b)
++ 大于   (a > b)
++ 小于   (a < b)
++ 大于等于 (a >= b)
++ 小于等于 (a <= b)
+
+```
+注意
+Swift也提供了两种特殊的运算符(===和!==)，你可以用这个来比较两个对象指针是否指向同一个对象。更多相关信息，请查看[特殊运算符]()章节。
+```
+
+每一个比较运算符都会返回一个布尔值，来表示语句结果是否是true：
+```
+1 == 1   // true 因为 1 等于 1
+2 != 1   // true 因为 2 不等于 1
+2 > 1    // true 因为 2 大于 1
+1 < 2    // true 因为 1 小于 2
+1 >= 1   // true 因为 1 大于等于 1
+2 <= 1   // false 因为 2 大于 1
+```
+
+比较运算符经常用于条件判断语句，比如if语句：
+```
+let name = "world"
+if name == "world" {
+    print("hello, world")
+} else {
+    print("I'm sorry \(name), but I don't recognize you")
+}
+// Prints "hello, world", because name is indeed equal to "world".
+```
+
+更多有关if语句的信息，请查看[控制流]()章节。
+
+你可以比较两个元组，如果他们有相同的类型和相同的元素数量的话。元组的比较是从左到右，一次比较一个值，直到比较到两个值不等即停止。
+两两相比，比较的结果决定了元组的比较结果。如果所有元素都两两相等，那么元组就是相等的。例如:
+```
+(1, "zebra") < (2, "apple")   // true 因为 1 is 小于 2; "zebra" 和 "apple" 无须比较。
+(3, "apple") < (3, "bird")    // true 因为 3 等于 3, and "apple" is 小于 "bird"
+(4, "dog") == (4, "dog")      // true 因为 4 等于 4, and "dog" 等于 "dog"
+```
+
+在上面这个例子中，第一行中你可以看出比较是从左到右的。无论其他的值大小如何，即使后面的"zebra"大于"apple", 因为1小于2，所以(1, "zebra")小于(2, "apple"),第一个元素的大小已经决定了整个元组的大小。但是，如果第一个元素相等，那么就会比较第二个，也就是第二三行的例子。
+
+只有当元组中的每个元素的值都可以被运算符比较时，元组才能够用这个运算符进行比较。例如，下面例子中，你可以比较两个(String, Int)类型的元组，因为String和Int类型都能分别被<比较。与此相反，两个(String, Bool)类型的元组是无法用<比较的，因为<不能用于布尔值比较。
+```
+("blue", -1) < ("purple", 1)        // OK, evaluates to true
+("blue", false) < ("purple", true)  // Error because < can't compare Boolean values
+```
+
+```
+注意
+Swift标准库中提供的元组比较运算符仅限于元素数最多6个的元组，如果要比较的元组的元素数大于或等于7个，就必须自行实现比较运算符。
+```
+
+#### 三元条件运算符
+
+三元条件运算符是一种特殊的由三部分组成运算符，三部分是`question ? answer1 : answer2`。它是由一个条件表达式的真假决定的两个表达式之一的值的简写。
+如果`question`结果是true，就计算并返回`answer1`的值，否则就计算并返回`answer2`的值。
+
+三元条件运算符是下面代码的简写：
+```
+if question {
+    answer1
+} else {
+    answer2
+}
+```
+
+下面是一个计算列表行高的例子。如果行有头部，那么行高应该比内容高度高50point，如果没有头部，高20point：
+```
+let contentHeight = 40
+let hasHeader = true
+let rowHeight = contentHeight + (hasHeader ? 50 : 20)
+// rowHeight is equal to 90
+```
+
+上面的例子实际就是下面代码的简写：
+```
+let contentHeight = 40
+let hasHeader = true
+let rowHeight: Int
+if hasHeader {
+    rowHeight = contentHeight + 50
+} else {
+    rowHeight = contentHeight + 20
+}
+// rowHeight is equal to 90
+```
+
+第一个例子中三元条件运算符的使用意味着只用一行代码就能给rowHeight设置好值，这比第二个例子中的代码更加简洁。
+
+三元条件运算符在决定使用两个表达式中的一个时提供了简洁的写法。但是请小心使用它，因为如果过度使用，虽然代码更加简洁，但是会导致很难阅读。
+另外，要避免在一个复杂语句中组合使用多个三元条件运算符。
