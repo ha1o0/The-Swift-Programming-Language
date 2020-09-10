@@ -243,3 +243,39 @@ if hasHeader {
 
 三元条件运算符在决定使用两个表达式中的一个时提供了简洁的写法。但是请小心使用它，因为如果过度使用，虽然代码更加简洁，但是会导致很难阅读。
 另外，要避免在一个复杂语句中组合使用多个三元条件运算符。
+
+
+#### 空合运算符
+
+空合运算符是指`??`，用法是`a ?? b`，它的意思是，当a有值时则会对a解包并返回值，当a是nil时，返回b的值。
+这里的a一定得是一个可选类型变量，同时b必须和a的值类型相同。
+
+空合运算符是下面代码的简写：
+```
+a != nil ? a! : b
+```
+
+上面的代码使用了三元条件运算符，当a不是nil时对a强制解包并返回，否则返回b的值。空合运算符提供了一种简单的方法来对可选类型进行条件检查，并用一种简洁易读的形式对其解包。
+```
+注意
+如果a的值不是nil，那么b的值就不会计算。这也叫做短路计算。
+```
+
+下面的例子使用空合运算符来在默认颜色a和可选类型自定义颜色名称之间进行选择：
+```
+let defaultColorName = "red"
+var userDefinedColorName: String?   // defaults to nil
+
+var colorNameToUse = userDefinedColorName ?? defaultColorName
+// userDefinedColorName is nil, so colorNameToUse is set to the default of "red"
+```
+
+`userDefinedColorName`变量被定义为可选类型字符串，默认值是nil。因为它是可选类型，所以可以使用空合运算符来处理它的值。
+在上面的例子中，运算符被用来给字符串变量`colorNameToUse`进行值初始化。因为`userDefinedColorName`是nil，`userDefinedColorName ?? defaultColorName`表达式返回的就是`defaultColorName`的值，也就是'red'。
+
+如果你给`userDefinedColorName`赋一个非nil的值，然后再次使用空合运算符进行检查，就会返回`userDefinedColorName`解包后的值，而不是默认值`defaultColorName`:
+```
+userDefinedColorName = "green"
+colorNameToUse = userDefinedColorName ?? defaultColorName
+// userDefinedColorName is not nil, so colorNameToUse is set to "green"
+```
