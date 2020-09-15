@@ -279,3 +279,174 @@ userDefinedColorName = "green"
 colorNameToUse = userDefinedColorName ?? defaultColorName
 // userDefinedColorName is not nil, so colorNameToUse is set to "green"
 ```
+
+#### 区间运算符
+
+Swift提供了几种区间运算符，用来表示一个值区间。
+
+##### 闭区间运算符
+
+闭区间运算符`a...b`定义了一个从a到b的区间，并且包含a和b。a的值一定不大于b。
+闭区间运算符用于对一个包含区间内所有值的区间的遍历，比如用于for-in循环：
+```
+for index in 1...5 {
+    print("\(index) times 5 is \(index * 5)")
+}
+// 1 times 5 is 5
+// 2 times 5 is 10
+// 3 times 5 is 15
+// 4 times 5 is 20
+// 5 times 5 is 25
+```
+
+有关for-in循环的更多介绍，请查看[控制流]()章节
+
+
+##### 半开区间运算符
+
+半开区间运算符`a..<b`定了一个从a到b的区间，但是不包含b。之所以叫半开区间，是因为它包含了区间第一个值，但不包含最后一个值。
+和闭区间一样，它的a值也一定不能大于b。如果a和b的值一样，那么这个区间就是空的。半开区间对于以零为开头的列表比如数组很有用，他可以很方便地算出列表的长度：
+```
+let names = ["Anna", "Alex", "Brian", "Jack"]
+let count = names.count
+for i in 0..<count {
+    print("Person \(i + 1) is called \(names[i])")
+}
+// Person 1 is called Anna
+// Person 2 is called Alex
+// Person 3 is called Brian
+// Person 4 is called Jack
+```
+
+注意，数组包含4个元素，但是`0..<count`只能数到3（即数组最后一个元素的下标），因为这是一个半开区间。更多数组相关的介绍，请查看[数组]()章节。
+
+##### 单边区间
+
+有另外一种类似于闭区间的区间形式，它在一个方向上没有边界。例如，一个包含从下标2开始到数组结束的区间。这里你可以忽略区间一边的值，这种区间就叫做单边区间，因为它只有一边有值。例如：
+```
+for name in names[2...] {
+    print(name)
+}
+// Brian
+// Jack
+
+for name in names[...2] {
+    print(name)
+}
+// Anna
+// Alex
+// Brian
+```
+
+半开区间运算符也有一种单边的形式，他只有结束的那边的值。同样的，最大的这个值也不在区间之内。例如：
+```
+for name in names[..<2] {
+    print(name)
+}
+// Anna
+// Alex
+```
+
+单边区间除了在下标方面有应用，在其他的场景也有应用。你不能遍历一个没有初始值的单边区间，因为这并没有一个清楚的起始值。但是你可以遍历一个忽略结束值的单边区间。
+然而，由于这种区间可以无限延伸下去，所以你必须给他一个明确的遍历结束的条件。你可以像下面的代码一样，检查一个单边区间是否包含一个特殊的值。
+```
+let range = ...5
+range.contains(7)   // false
+range.contains(4)   // true
+range.contains(-1)  // true
+```
+
+#### 逻辑运算符
+
+逻辑运算符的作用是修改或者合并`true`和`false`这样的逻辑布尔值。Swift支持C系语言中的三种标准逻辑运算符：
++ 逻辑否(!a)
++ 逻辑与(a && b)
++ 逻辑或(a || b)
+
+##### 逻辑否运算符
+
+逻辑否运算符(!a)的作用是把一个布尔值取否，比如把true变为false，false变为true。
+逻辑否运算符是一个前缀运算符，并且要紧贴被操作变量，中间不能有空格。意思是'not a'，下面是一个例子：
+```
+let allowedEntry = false
+if !allowedEntry {
+    print("ACCESS DENIED")
+}
+// Prints "ACCESS DENIED"
+```
+
+语句`if !allowedEntry`的意思是‘如果不被允许进入’。从句只能在‘不被允许进入’为`true`时才会执行，也就是`if allowedEntry`为false时。
+
+就像上面这个例子一样，对布尔变量或常量名字的慎重选择有助于保持代码的良好可读性和简洁性，尽量避免出现双重否定或者混乱逻辑的语句。
+
+##### 逻辑与运算符
+
+逻辑与运算符的作用是创建一个逻辑表达式，这个表达式只有所有值都是true时，整个表达式的值才是true。
+如果其中一个值是false，整个表达式的值就是false，实际上，如果第一个值就是false的话，第二个值甚至不会去计算，因为它无法改变整个值是false的事实。
+这也叫做短路计算。
+
+下面这个例子就是只有两个值都是true时才会打印"Welcome!"：
+```
+let enteredDoorCode = true
+let passedRetinaScan = false
+if enteredDoorCode && passedRetinaScan {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "ACCESS DENIED"
+```
+
+##### 逻辑或运算符
+
+逻辑或运算符是一种由两个管道符组成的中缀运算符。你可以用它来创建一个逻辑表达式，在这个表达式中只要有一个值是true，那么整个表达式的值就是true。
+和上面的逻辑与表达式一样，逻辑或运算符也采用了短路计算的方法。如果表达式左边的值是true，那么右边的值就不会计算，以为右边的值已经无法改变整个表达式的值了。
+
+在下面的例子中，第一个布尔值(hasDoorKey)是false，但是第二个值(knowsOverridePassword)是true,因为有一个值是true，所以整个表达式的值就是true，即允许通过：
+```
+let hasDoorKey = false
+let knowsOverridePassword = true
+if hasDoorKey || knowsOverridePassword {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "Welcome!"
+```
+
+##### 混合逻辑运算符
+
+你可以把多个逻辑运算符组合到一起变成一个更长的混合表达式：
+```
+if enteredDoorCode && passedRetinaScan || hasDoorKey || knowsOverridePassword {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "Welcome!"
+```
+
+这个例子中用到了多个`&&`和`||`运算符来创建了一个更长的混合表达式。但是，每个`&&`和`||`仍然只操作两个值，因此，实际上这是把三个短的表达式串联在一起。它的意思是：
+如果我们已经进入了正确的门号并且通过了视网膜扫描，或者有门的钥匙，或者知道紧急密码，那么就允许通过。
+
+基于三个变量的值，如果前两个的值是false但是知道紧急密码，那么整个表达式的值仍然是true。
+```
+注意
+Swift的逻辑运算符&&和||都是从左向右计算的，也就是说多个逻辑运算符组成的混合表达式都是从最左边开始计算子表达式的。
+```
+
+#### 明确的圆括号
+
+在不必使用括号的情况下使用括号有时也是有用的，它可以让复杂的表达式变得更加清晰，增强其可读性。在上面的进门的例子中，在混合表达式的第一个部分加上圆括号是很有用的，可以更清楚地指明语句的意图：
+```
+if (enteredDoorCode && passedRetinaScan) || hasDoorKey || knowsOverridePassword {
+    print("Welcome!")
+} else {
+    print("ACCESS DENIED")
+}
+// Prints "Welcome!"
+```
+
+圆括号可以让前两个值在整个逻辑中清晰地结合成一部分来计算。并且整个混合表达式的结果也没有发生变化，只是整个逻辑意图更加容易理解。
+易读性总是优先于简洁性的，使用圆括号有助于让你的意图更加清晰。
+
