@@ -5,3 +5,4 @@
 * [语言指南](Language Guide.md)
   * [基础](Language Guide/The Basics.md)
   * [基本运算符](Language Guide/Basic Operators.md)
+  * [字符串和字符](Language Guide/Strings and Characters.md)
