@@ -8,7 +8,7 @@ Swift的`String`和`Character`类型提供了一种方便快速的Unicode兼容�
 
 ```
 注意
-Swift的字符串类型是与Foundation中的NSString类进行桥接的。Foundation也扩展了String类型，暴露了一些由NSString定义的方法。也就是说，如果你导入了Foundation，就可以在String类型上使用NSString提供的方法，而不需要类型转换。
+Swift的字符串类型是用Foundation中的NSString类进行桥接的。Foundation也扩展了String类型，暴露了一些由NSString定义的方法。也就是说，如果你导入了Foundation，就可以在String类型上使用NSString提供的方法，而不需要类型转换。
 更多有关在Foundation和Cocoa中使用String的信息，请查看[String和NSString的桥接]()章节。
 ```
 
@@ -95,7 +95,7 @@ Escaping all three quotation marks \"\"\"
 ##### 扩展字符串分隔符
 
 你可以把一个字符串字面量放在字符串的扩展分隔符中来包含特殊的字符而不会使它的转义生效。把字符串放在引号中，两边再用#号来包裹起来。例如，字符串`#"Line 1\nLine 2"#`会打印出包含'\n'的一行，而不是两行。
-如果你需要字符串字面量中字符的特殊效果，请与转义符（\）后面的字符串中数字符号的数目相匹配。例如，如果你的字符串是#"Line 1\nLine 2"#, 并且你想要换行，那么可以用#"Line 1\#nLine 2"#,同样的，###"Line 1\###nLine 2"### 这样也可以实现换行。
+如果你需要字符串字面量中字符的特殊效果，请与转义符（\）后面的字符串中数字符号的数目相匹配。例如，如果你的字符串是`#"Line 1\nLine 2"#`, 并且你想要换行，那么可以用`#"Line 1\#nLine 2"#`,同样的，`###"Line 1\###nLine 2"###` 这样也可以实 现换行。
 
 由扩展分隔符创建的字符串字面量也可以是多行字符串字面量。你可以使用扩展分隔符在多行字符串中把`"""`包含进去。例如：
 ```
@@ -103,4 +103,81 @@ let threeMoreDoubleQuotationMarks = #"""
 Here are three more double quotes: """
 """#
 ```
+
+#### 初始化一个空字符串
+
+要创建一个空字符串有两种方法，一种是给一个变量赋一个空字符串字面量，另一种是用构造器语法构造一个字符串实例：
+
+```
+var emptyString = ""               // empty string literal
+var anotherEmptyString = String()  // initializer syntax
+// these two strings are both empty, and are equivalent to each other
+```
+
+用字符串的`isEmpty`属性可以查看字符串是否是空字符串：
+
+```
+if emptyString.isEmpty {
+    print("Nothing to see here")
+}
+// Prints "Nothing to see here
+```
+
+#### 字符串可变性
+
+当字符串赋给一个变量时，代表它是可变的，当字符串赋给一个常量时，代表它是不可变的：
+
+```
+var variableString = "Horse"
+variableString += " and carriage"
+// variableString is now "Horse and carriage"
+
+let constantString = "Highlander"
+constantString += " and another Highlander"
+// this reports a compile-time error - a constant string cannot be modified
+```
+
+```
+注意
+这个方法和Objective-C和Cocoa中的字符串使用NSString和NSMutableString类来表示可变与否是不同的。
+```
+
+#### 字符串是值类型
+
+Swift的字符串类型是值类型。如果你创建一个新的字符串值，当它被传递给函数或者方法中，或者当它被赋值给变量或者常量时，字符串的值是被拷贝过去的。上述情形中，都会创建一个已出现的字符串值的拷贝值，并且被传递或者赋值的都是新的拷贝值，而不是原始的字符串。值类型在[结构体和枚举是值类型]()章节中有介绍。
+
+Swift的字符串默认拷贝机制确保了当一个函数或方法传递字符串时，不管字符串是来自哪里，你都会拥有这个确定的字符串。也就是说，你传递出去的字符串除非你自己修改它，它是不会被其他地方修改的。
+
+在这个场景背后，Swift的编译器优化了字符串的使用，使得真实的拷贝仅在确实需要拷贝时才进行拷贝。这意味着你在使用字符串作为值类型时总是可以获得最佳的性能。
+
+#### 字符的使用
+
+你可以用一个`for-in`循环对字符串进行迭代来访问字符串中的每个字符值：
+```
+for character in "Dog!🐶" {
+    print(character)
+}
+// D
+// o
+// g
+// !
+// 🐶
+```
+
+`for-in` 循环在[For-In 循环]()章节有介绍。
+
+除此之外，你可以使用单个字符字符串字面量来单独创建一个字符常量或变量，类型是字符类型：
+```
+let exclamationMark: Character = "!"
+```
+
+字符串值可以通过传递一个字符值数组作为字符串构造器参数来构造出来：
+```
+let catCharacters: [Character] = ["C", "a", "t", "!", "🐱"]
+let catString = String(catCharacters)
+print(catString)
+// Prints "Cat!🐱"
+```
+
+#### 字符串和字符的联系
 
