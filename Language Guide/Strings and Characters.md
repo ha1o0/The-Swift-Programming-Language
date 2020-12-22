@@ -181,3 +181,89 @@ print(catString)
 
 #### 字符串和字符的联系
 
+加号(+)运算符可以把字符串值连接起来生成新的字符串：
+```
+let string1 = "hello"
+let string2 = " there"
+var welcome = string1 + string2
+// welcome now equals "hello there"
+```
+
+你也可以用加号赋值运算符(+=)来把一个字符串值追加到另一个字符串后面：
+```
+var instruction = "look over"
+instruction += string2
+// instruction now equals "look over there"
+```
+
+你可以用String类型的append()方法把字符追加到字符串后面：
+```
+let exclamationMark: Character = "!"
+welcome.append(exclamationMark)
+// welcome now equals "hello there!"
+```
+
+```
+注意
+你不能把字符或者字符串追加到字符变量后面，因为一个Character值只能包含一个字符。
+```
+
+如果你使用的是多行字符串字面量，并且想要拼接成的字符串的每一行都以换行符结尾（包括最后一行），参考下面的例子：
+
+```
+let badStart = """
+one
+two
+"""
+let end = """
+three
+"""
+print(badStart + end)
+// Prints two lines:
+// one
+// twothree
+
+let goodStart = """
+one
+two
+
+"""
+print(goodStart + end)
+// Prints three lines:
+// one
+// two
+// three
+```
+
+在上面的代码中，连接`badStart`和`end`变量的结果是一个两行的字符串，这并不是我们期望的结果。因为和`end`变量第一行连接的`badStart`的最后一行没有以换行符为结尾。作为对比，`goodStart`和`end`的每一行都以换行符为结尾，所以它们连接起来的结果如我们期望的有三行。
+
+#### 字符串插值
+
+字符串插值是一种构建字符串的方法，这个字符串是由常量，变量，字面量和包含它们的表达式插入字符串字面量中混合组成的。字符串插值在单行和多行字符串字面量中都可以使用。字符串字面量中插入的每一项都必须由`\()`所包裹起来：
+```
+let multiplier = 3
+let message = "\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)"
+// message is "3 times 2.5 is 7.5"
+```
+
+在上面的例子中，变量`multiplier`的值被以`\(multiplier)`形式插入到一个字符串字面量中。占位符会被`multiplier`的实际值所替代。
+
+`multiplier`的值也是字符串后面表达式中的一部分，这个表达式计算的是`(Double(multiplier) * 2.5`的值，并把结果(7.5)插入到字符串中。在这个例子中，当表达式插入到字符串字面量中时需要写成`\(Double(multiplier) * 2.5)`形式。
+
+你可以用扩展分隔符来创建包含字符串插值字符的字符串，例如：
+```
+print(#"Write an interpolated string in Swift using \(multiplier)."#)
+// Prints "Write an interpolated string in Swift using \(multiplier)."
+```
+
+要在使用扩展分隔符的字符串内使用字符串插值，请将反斜杠后的数字符号数与字符串开头和结尾处的数字符号数相匹配，例如：
+```
+print(#"6 times 7 is \#(6 * 7)."#)
+// Prints "6 times 7 is 42."
+```
+
+```
+注意
+在插入字符串内的括号内编写的表达式不能包含非转义反斜杠（\）、回车符或换行符。但是，它们可以包含其他字符串文本。
+```
+
